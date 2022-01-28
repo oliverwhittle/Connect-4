@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Document</title>
+    <link rel="icon" href="/icons/4inr.png">
+</head>
+<body>
+    <section class="playerstatsPage">
+        <div class="playerstatsContainer">
+            <h2 class="playerstatsName">Text</h2>
+            <h2 class="playerstatsWins">Text</h2>
+        </div>
+        <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
+    </section>
+
+    <section class="playerLogin">
+        <button class="inputLable" type="button">Enter Name:</button>
+        <input type="text" class="userName"  placeholder="Enter your username" name="name">   
+    </section>  
+
+    <section class="mainMenu">
+        <p class="gameTitle">Connect⠀Four</p> <!--there is a blank character here "⠀"--> 
+        <div class="menuContainer">
+            <button type="button" id="startButton" class="btn-start btn btn-lg">Start</button>
+            <button type="button" id="AIButton" class="btn-AI btn btn-lg">AI</button>
+            <button type="button" id="statsButton" class="btn-stats btn btn-lg">Stats</button>
+        </div>
+    </section>
+    
+    <section class="gameSettings">
+        <button type="button" id="creategameButton" class="btn-create-game btn btn-lg">Create Game</button>
+        <p class="roomCode">Test</p> 
+        <button type="button" id="joingameButton" class="btn-join-game btn btn-lg">Join Game</button>
+        <input type="text" class="joinCode"  placeholder="Enter game code">
+    </section>
+    
+    <section class="gameScreen">
+        <div class="gridContainer">
+            <div class="gameGrid" id="gameGrid">
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item row" data-cell row></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+                    <div class="grid-item" data-cell></div>
+            </div>
+        </div>
+    </section>
+
+    <button type="button" id="restartButton" class="btn-restart btn btn-lg">Restart</button>
+    <button type="button" id="menuButton" class="btn-menu btn btn-lg">Menu</button>
+    
+    <section>
+        <div class="player-stats-section"></div>
+    </section>
+
+    <section class="maxPlayers">
+        <h2 class="playercapFilled">There are too many players at this time!</h2>
+    </section>
+
+    <section class = "gameResults">
+        <div class="winningPlayer"></div>  
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+</body>
+</html>

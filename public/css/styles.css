@@ -1,0 +1,423 @@
+.playerstatsContainer{
+  background:#FFD166;
+    padding: 50px;
+    border-radius: 25px;
+    width: 600px;
+    height: 1000px;
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.playerstatsName{
+    position: fixed;
+    top: 20%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    text-align: center;
+    color: black;
+}
+
+.playerstatsWins{
+    position: fixed;
+    top: 30%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    text-align: center;
+    color: black;
+}
+
+/*------------------------------------------------------------------------------*/
+
+body{
+    background: #06D6A0;
+}
+
+#myChart{
+  position: fixed;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+}
+
+.gameTitle{
+  width: 12.5ch;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: none;
+  top: 10%;
+  left: 50%;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  font-weight: bold;
+  animation: typing 1s steps(13)
+}
+
+@keyframes typing {
+  from {width: 0ch;}
+  0% {border-right: solid 5px;}
+  99% {border-right: solid 5px;}
+  100% {border-right: none;}
+}
+
+.playercapFilled {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  text-align: center;
+  color: black;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.gameResults{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    width: 720px;
+    height: 480px;
+    background: #FFD166;
+    transition: 0.1s ease all;
+    text-align: center;
+    font-size: 100px; 
+}
+
+.winningPlayer{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 60px;
+    padding: 20px;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    color: black;
+    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    font-family: Inter, sans-serif;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.userName {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 90px;
+  font-size: 40px;
+  border: 0px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.inputLable{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease all;
+  background: #FFD166;
+  width: 300px;
+  border: 0px;
+  height: 94.4px;
+  font-size: 40px;
+  text-align: center;
+  border-radius: 25px;
+  cursor:pointer;
+  box-shadow: 0px 5px 0px 0px #a88a44;
+}
+
+.inputLable:hover {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #FFD166;
+}
+
+/*------------------------------------------------------------------------------*/
+.menuContainer{
+  outline: 15px solid #2a0f8b;
+  background:#3d0dec;
+  border-radius: 25px;
+  width: 400px;
+  height: 500px;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-stats{
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: #FFD166;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    height: 90px;
+    font-size: 60px;
+    cursor:pointer;
+    box-shadow: 0px 5px 0px 0px #a88a44;
+}
+
+.btn-stats:hover{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #FFD166;
+}
+
+.btn-AI{
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: #FFD166;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    height: 90px;
+    font-size: 60px;
+    cursor:pointer;
+    box-shadow: 0px 5px 0px 0px #a88a44;
+}
+
+.btn-AI:hover{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #FFD166;
+}
+
+.btn-start {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: #FF134A;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    height: 90px;
+    font-size: 60px;
+    cursor:pointer;
+    box-shadow: 0px 5px 0px 0px #c00934;
+
+    /*overflow: visible;
+    -webkit-transition: height 0.1s;
+    transition: height 0.1s;
+    white-space: break-spaces; */
+}
+
+.btn-start:hover {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 0px 0px #FFD166;
+    /*height: 180px;
+    -webkit-transition: height 0.1s;
+    transition: height 0.1s;*/
+}
+
+/*------------------------------------------------------------------------------*/
+.btn-menu{
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    color: black;
+    border: none;
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
+    font-size: 25px;
+    cursor:pointer;
+    display: none;
+}
+
+.btn-restart{
+    position: fixed;
+    top: 90%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    color: black;
+    border: none;
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
+    font-size: 25px;
+    cursor:pointer;
+    display: none;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.gridContainer{
+    background:#06d6a0;
+    padding: 50px;
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gameGrid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(6, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    cursor: pointer;
+    outline: 15px solid #2a0f8b;
+    border: 15px solid #3d0dec;
+    background: #3d0dec;
+}
+  
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 120px;
+    background: #06d6a0;
+}
+
+.row:hover {
+    opacity: 0.5;
+}
+
+.grid-item.R::before,
+.grid-item.R::after,
+.gameGrid.R .row:not(.R):not(.Y):hover::before,
+.gameGrid.R .row:not(.R):not(.Y):hover::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: #FF134A;
+  border-radius: 120px;
+  animation: drop;
+}
+
+.grid-item.Y::before,
+.grid-item.Y::after,
+.gameGrid.Y .row:not(.R):not(.Y):hover::before,
+.gameGrid.Y .row:not(.R):not(.Y):hover::after{
+  content: '';
+  position: absolute; 
+  height: 100px;
+  width: 100px;
+  background-color: #FFD166;
+  border-radius: 120px;
+  animation: drop;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.mainMenu, .playerstatsPage, .gameScreen, .playercapFilled, .gameResults, .gameSettings{
+  display: none;
+}
+
+.playerLogin{
+  display: block;
+}
+
+.btn-create-game{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease all;
+  background: #FF134A;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  width: 300px;
+  height: 180px;
+  font-size: 60px;
+  cursor:pointer;
+  box-shadow: 0px 5px 0px 0px #c00934;
+}
+
+.btn-create-game:hover {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #FFD166;
+}
+
+.btn-join-game{
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease all;
+  background: #FF134A;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  width: 300px;
+  height: 180px;
+  font-size: 60px;
+  cursor:pointer;
+  box-shadow: 0px 5px 0px 0px #c00934;
+}
+
+.btn-join-game:hover {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #FFD166;
+}
+
+.roomCode{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 90px;
+  font-size: 50px;
+  border: 0px;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #FFD166;
+}
+
+.joinCode{
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 90px;
+  font-size: 40px;
+  border: 0px;
+  border-radius: 25px;
+  text-align: center;
+}

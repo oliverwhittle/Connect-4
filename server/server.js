@@ -1,0 +1,295 @@
+const path = require('path');
+const http = require('http');
+const express = require('express');
+const socketIO = require('socket.io');
+
+const fs = require('fs');
+const { get } = require('express/lib/request');
+const file = "public/textfiles/stats.txt"
+const publicPath    = path.join(__dirname, '/../public');
+const port = process.env.PORT || 3000;
+let app = express();
+let server = http.createServer(app);
+let io = socketIO(server);
+var total
+
+var clients =[];
+let origionalTurn
+let assignedTurn
+let winner = ""
+let userWins = "0"
+var userData = {name: "temp", wins: userWins }
+var lines
+
+app.use(express.static(publicPath));
+
+server.listen(port, ()=> {
+    console.log(`Server is up on port ${port}.`)
+});
+
+io.on('connection', (socket) => {
+    console.log('A user just connected.');
+    
+    socket.on('clientInfo', (data) =>{
+        clients.push(data);
+    io.to(socket.id).emit('menu');
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//this needs to be fixed
+    socket.on('disconnect', (socket) => {
+        console.log('A user has disconnected.');
+        var total = io.engine.clientsCount
+        io.emit('disconecting', total)
+        for( var i=0, len=clients.length; i<len; ++i ){
+            var c = clients[i].socketID;
+            console.log(c);
+            console.log(socket)
+            if(c == socket.id){
+                clients.splice(i);
+                break;
+            }
+        }
+        console.log("Refreshed client list", clients);
+    })
+   
+    function getRoomCode(client) {
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].socketID == client){
+                return clients[i].room
+            }
+        }
+    }
+
+    socket.on('waitingRoom', (roomCode, socketIdentifier, gamestate) => {
+        console.log("This is running")
+        //this needs fixing
+        socket.join(roomCode);
+        var roomtoConnect;
+        var clientsInRoom = []
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].socketID == socketIdentifier ){
+                clients[i].room = roomCode
+            }
+        }
+
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].room == roomCode ){
+                clientsInRoom.push(clients[i])
+            }
+        }
+        console.log("before clients in room", clientsInRoom)
+        while (clientsInRoom.length > 2){
+            if (clientsInRoom.length > 2){
+                clientsInRoom.pop()
+                socket.leave(roomCode)
+            }
+        }
+        console.log("after clients in room", clientsInRoom)
+        console.log("Clients list", clients)
+        total = io.engine.clientsCount
+        
+        io.to(roomCode).emit('startGame', gamestate);
+    })
+
+    socket.on('menu', (data) => {
+    io.emit("menu")
+    })
+
+    socket.on('associateTurn', (data) => {
+        var roomCode = getRoomCode(data)
+        console.log("Room code", roomCode)
+        var clientsInRoom = []
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].room == roomCode ){
+                clientsInRoom.push(clients[i])
+            }
+        }
+        if (clientsInRoom.length == 2){
+            clientsInRoom[0].colour = "R"
+            clientsInRoom[1].colour = "Y"
+        } else if(clientsInRoom.length == 1){
+            clientsInRoom[0].colour = "R"
+        } else{
+            //HERE
+        }  
+        if(data == clientsInRoom[0].socketID){
+            assignedTurn = clientsInRoom[0].colour
+        } else if (data == clientsInRoom[1].socketID) {
+            assignedTurn = clientsInRoom[1].colour
+        }
+        console.log("Assigned", assignedTurn)
+    io.to(socket.id).emit("assigned", assignedTurn)
+    })
+
+    socket.on('placed', (data, gamestate) => { 
+        var roomCode = getRoomCode(data.client)
+        let found = false
+        for(let i = 0; i < 7; i++){
+            if(found == false){
+                if((gamestate.board[data.cell + (i*7)] == "R") || (gamestate.board[data.cell + (i*7)] == "Y")){
+                    found = true
+                    gamestate.board[(data.cell + (i*7)) - 7] = data.class;
+                } else if(i * 7 == 41){ // this willl eventualy be removed
+                    gamestate.board[i] = data.class;
+                } else if ((gamestate.board[data.cell + (i*7)] == " ")){
+                    if(data.cell + (i*7) >= 35){
+                        gamestate.board[data.cell + (i*7)] = data.class;
+                    } else if(data.cell + (i*7) < 35){
+                    }
+                }
+            } else if(found == true){
+            }
+        }
+    //vertical
+    winner = ""
+    for(let i = 0; i < 3; i++){
+        for(let x = 0; x < 6; x++){
+            if(gamestate.board[(i*7)+(x)] == gamestate.turn){
+                if(gamestate.board[(i*7)+(x) + 7] == gamestate.turn){
+                    if(gamestate.board[(i*7)+(x) + 14] == gamestate.turn){
+                        if(gamestate.board[(i*7)+(x) + 21] == gamestate.turn){
+                            winner = gamestate.turn
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    //horisontal
+    for(let i = 0; i < 6; i++){
+        for(let x = 0; x < 4; x++){
+            if(gamestate.board[((i*7) + x)] == gamestate.turn){
+                if(gamestate.board[((i*7) + x) + 1] == gamestate.turn){
+                    if(gamestate.board[((i*7) + x) + 2] == gamestate.turn){
+                        if(gamestate.board[((i*7) + x) + 3] == gamestate.turn){
+                            winner = gamestate.turn
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //diagonal l2r
+    for(let i = 0; i < 4; i++){
+        for(let x = 0; x < 3; x++){
+            if(gamestate.board[(i) + (x*7)] == gamestate.turn){
+                if(gamestate.board[(i) + (((x + 1)*7) + 1)] == gamestate.turn){
+                    if(gamestate.board[(i) + (((x + 2)*7) + 2)] == gamestate.turn){
+                        if(gamestate.board[(i) + (((x + 3)*7) + 3)] == gamestate.turn){
+                            winner = gamestate.turn
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //diagonal r2l
+    for(let i = 7; i > 3; i--){
+        for(let x = 6; x > 3; x--){
+            if(gamestate.board[(i) + (x*7)] == gamestate.turn){
+                if(gamestate.board[(i) + (((x + 1)*7) - 1)] == gamestate.turn){
+                    if(gamestate.board[(i) + (((x + 2)*7) - 2)] == gamestate.turn){
+                        if(gamestate.board[(i) + (((x + 3)*7) - 3)] == gamestate.turn){
+                            winner = gamestate.turn
+                        }
+                    }
+                }
+            }
+        }
+    }
+    gamestate.winner = winner   
+    var clientsInRoom = []
+    for (var i = 0; i < clients.length; i++){
+        if (clients[i].room == roomCode ){
+            clientsInRoom.push(clients[i])
+        }
+    }
+    if(data.client == clientsInRoom[0].socketID && gamestate.turn == "R"){
+        origionalTurn = gamestate.turn
+        gamestate.turn = "Y"
+    } else if (data.client == clientsInRoom[1].socketID && gamestate.turn == "Y") {
+        origionalTurn = gamestate.turn
+        gamestate.turn = "R"
+    }
+    gamestate.origional = origionalTurn
+    io.to(roomCode).emit('placed', gamestate);
+    })
+
+    socket.on('updateGamestate', (gamestate, socketIdentifier) => {
+        var roomCode = getRoomCode(socketIdentifier)
+        io.to(roomCode).emit('gamestateUpdated', gamestate)
+    })
+    
+    socket.on('win', (data, socketIdentifier) => {
+        var roomCode = getRoomCode(socketIdentifier)
+    userData = {name: "temp", wins: userWins }
+    lines = fs.readFileSync(file, 'utf-8').toString().split(",");
+    for( var i=0, len=clients.length; i<len; ++i ){
+        var c = clients[i].colour;
+        if(c == data){
+            userData.name = clients[i].playerName
+            if(linearSearch(lines, userData.name) !== -1){
+                userData.wins = (parseFloat(lines[(linearSearch(lines, userData.name) + 1)])+ 0.5) // this happens beacuse this is actualy called twice
+                lines[linearSearch(lines, userData.name) + 1] = userData.wins
+            }else if(linearSearch(lines, userData.name) == -1){
+                userData.wins = 0.5 
+                lines.push([userData.name, userData.wins])
+            }
+        }else{
+        }
+    }
+    fs.writeFileSync(file, lines.toString())
+    lines = fs.readFileSync(file, 'utf-8').toString().split(",");
+    io.to(roomCode).emit('win', data);
+    })
+
+    socket.on('getFile', (data) => {
+        lines = fs.readFileSync(file, 'utf-8').toString().split(",");
+        io.to(socket.id).emit('returnFile', lines);
+    })
+    
+    socket.on('draw', (socketIdentifier) => {  
+        var roomCode = getRoomCode(socketIdentifier)
+    io.to(roomCode).emit('draw');
+    })
+
+    function linearSearch(arr, key){
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] === key){
+                return i
+            }
+        }
+        return -1
+    }
+});

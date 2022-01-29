@@ -88,6 +88,12 @@ restartButton.addEventListener('click', () => {
     }
 });
 
+socket.on('gameReloaded', (data) => {
+    gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
+    socket.emit('updateGamestate', gamestate, socket.io.engine.id)
+    socket.emit('gameRestart', socket.io.engine.id, gamestate);
+})
+
 menuButton.addEventListener('click', () => {
     socket.emit('menu', socket.io.engine.id);
 });

@@ -38,34 +38,6 @@ io.on('connection', (socket) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //this needs to be fixed
     socket.on('disconnect', (socket) => {
         console.log('A user has disconnected.');
@@ -83,6 +55,9 @@ io.on('connection', (socket) => {
         console.log("Refreshed client list", clients);
     })
    
+
+
+
     function getRoomCode(client) {
         for (var i = 0; i < clients.length; i++){
             if (clients[i].socketID == client){
@@ -122,8 +97,14 @@ io.on('connection', (socket) => {
         io.to(roomCode).emit('startGame', gamestate);
     })
 
+    socket.on('reloadGame', (data) => {
+        var roomCode = getRoomCode(data)
+    io.to(roomCode).emit("menu")
+    })
+
     socket.on('menu', (data) => {
-    io.emit("menu")
+        var roomCode = getRoomCode(data)
+    io.to(roomCode).emit("menu")
     })
 
     socket.on('associateTurn', (data) => {

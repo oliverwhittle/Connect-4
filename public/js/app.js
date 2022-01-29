@@ -84,12 +84,12 @@ restartButton.addEventListener('click', () => {
     if (playingAiGame == true){
         runAIGame();
     }else if (playingAiGame == false){
-        socket.emit('startGame');
+        socket.emit('reloadGame', socket.io.engine.id);
     }
 });
 
 menuButton.addEventListener('click', () => {
-    socket.emit('menu');
+    socket.emit('menu', socket.io.engine.id);
 });
 
 AIButton.addEventListener('click', () => {

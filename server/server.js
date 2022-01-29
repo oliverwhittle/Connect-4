@@ -104,7 +104,7 @@ io.on('connection', (socket) => {
 
     socket.on('gameRestart', (socketIdentifier, gamestate) => {
         var roomCode = getRoomCode(socketIdentifier)
-    io.to(roomCode).emit("gameReloaded", gamestate)
+    io.to(roomCode).emit("startGame", gamestate)
     })
 
     socket.on('menu', (data) => {

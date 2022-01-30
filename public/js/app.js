@@ -431,10 +431,8 @@ function placeRPiece(cell, R_class){
             }
         })
         if (checkWin(R_class, AIgamestate) == R_class){
-            console.log(AIgamestate)
             playerWin(R_class)
         }else if (checkWin(Y_class, AIgamestate) == Y_class){
-            console.log(AIgamestate)
             playerWin(Y_class)
         }else if (checkDraw()){
             playerDraw()
@@ -518,10 +516,8 @@ function chooseAIplace(AIgamestate){
         }
     });
     if (checkWin(R_class, AIgamestate) == R_class){
-        console.log(AIgamestate)
         playerWin(R_class)
     }else if (checkWin(Y_class, AIgamestate) == Y_class){
-        console.log(AIgamestate)
         playerWin(Y_class)
     }else if (checkDraw()){
         playerDraw()
@@ -536,7 +532,6 @@ function getRandomInt(max) {
  
 function checkWin(turn, AIgamestate){
     winner = ""
-    console.log(AIgamestate)
     //vertical
     for(let i = 0; i < 3; i++){
         for(let x = 0; x < 7; x++){

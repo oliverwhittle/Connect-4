@@ -24,19 +24,18 @@ const roomCode = document.querySelector('.roomCode')
 const joinCode = document.querySelector('.joinCode')
 const userName = document.querySelector('.userName');
 const winningPlayer = document.querySelector('.winningPlayer');
-//const playerstatsContainer = document.querySelector('.playerstatsContainer');
 const playerstatsName = document.querySelector('.playerstatsName');
 const playerstatsWins = document.querySelector('.playerstatsWins');
 
 const R_class = 'R'
 const Y_class = 'Y'
-var gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
 const drawingCombos = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]
 const cellElement = document.querySelectorAll('[data-cell]')
 const row = document.querySelectorAll('[row]')
 const gridElement = document.getElementById('gameGrid')
 const barChart = document.getElementById('myChart');
 
+var gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
 var AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
 let rTurn = "R"
 let origionalTurn
@@ -45,17 +44,6 @@ let playerCount = 0
 var lines
 var playingAiGame = false;
 var playingGame = false;
-
-//socket.on('maxPlayers', () => {
-//    mainMenu.style.display = "none";
-//    gameScreen.style.display = "none";
-//    gameResults.style.display = "none";
-//    playercapFilled.style.display = "block";
-//    menuButton.style.display = "none";
-//    restartButton.style.display = "none";
-//    gameSettings.style.display = "none";
-//    socket.disconnect(true);
-//});
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
@@ -101,12 +89,13 @@ menuButton.addEventListener('click', () => {
     }else if (playingGame == true){
         socket.emit('quitGame', socket.io.engine.id);
     }else{
-        socket.emit('reloadGame', socket.io.engine.id);
+        menu();
     }
 });
 
 socket.on('gameLeft', (data) => {
     socket.emit('allplayersLeave', socket.io.engine.id);
+    playingGame == false;
     menu();
 });
 
@@ -157,11 +146,9 @@ socket.on('disconecting', (data) => {
 //});
 
 socket.on('startGame', (data) => {
-   // document.body.style.backgroundColor = "#06D6A0"; //colour
     updateBoard(data);
     socket.emit('associateTurn', socket.io.engine.id) 
-      }
-);
+});
 
 socket.on('assigned', (data) => {
     clientTurn = data
@@ -188,7 +175,7 @@ function startGame() {
 function handleClick(e){
     const cell = e.target
     console.log("cell clicked")
-    if(clientTurn == rTurn){ // it breaks here
+    if(clientTurn == rTurn){
         placePiece(cell, rTurn)
     } else {
         console.log("no")
@@ -210,7 +197,7 @@ socket.on('draw', (data) => {
 
 function playerWin(origionalTurn){
     gameScreen.style.display = "none";
-    document.body.style.backgroundColor = "#06D6A0"; //colour
+    document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
@@ -219,7 +206,7 @@ function playerWin(origionalTurn){
 
 function playerDraw(){
     gameScreen.style.display = "none";
-    document.body.style.backgroundColor = "#06D6A0"; //colour
+    document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
@@ -296,7 +283,6 @@ function statsPage(lines){
     menuButton.style.display = "block";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
-
     playerstatsName.innerHTML = "Name: " + userName.value 
     playerstatsWins.innerHTML = "Wins: " + lines[linearSearch(lines, userName.value.toLowerCase()) + 1];
 
@@ -312,7 +298,6 @@ function statsPage(lines){
     }
     var xValues = players
     var yValues = wins
-    //var barColors = ["red", "green","blue","orange","brown"];
     var barColors = Array.apply(null, Array(5)).map(function () {})
     for( var i=0, len=barColors.length; i<len; ++i ){
         barColors[i] = getRandomColor()
@@ -351,8 +336,6 @@ function statsPage(lines){
                 }],
                 yAxes: [{
                     gridLines: {
-                    //zeroLineColor: "black",
-                    //zeroLineWidth: 2
                     },
                     scaleLabel: {
                     display: true,

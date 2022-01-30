@@ -85,7 +85,7 @@ socket.on('gameReloaded', (data) => {
 
 menuButton.addEventListener('click', () => {
     if (playingAiGame == true){
-        //
+        menu();
     }else if (playingGame == true){
         socket.emit('quitGame', socket.io.engine.id);
     }else{
@@ -430,7 +430,15 @@ function placeRPiece(cell, R_class){
                 cell.classList.add(Y_class);
             }
     })
-    chooseAIplace(AIgamestate);
+    if (checkWin(R_class, AIgamestate)){
+        playerWin(R_class)
+    }else if (checkWin(Y_class, AIgamestate)){
+        playerWin(Y_class)
+    }else if (checkDraw()){
+        playerDraw()
+    }else{
+        chooseAIplace(AIgamestate);
+    }
 }
 
 function chooseAIplace(AIgamestate){

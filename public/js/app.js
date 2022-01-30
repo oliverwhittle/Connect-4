@@ -580,7 +580,7 @@ function checkWin(turn, AIgamestate){
         }
     }
     //diagonal l2r up
-    for(let i = 0; i < 4; i--){
+    for(let i = 0; i < 4; i++){
         for(let x = 5; x > 3; x--){
             if(AIgamestate[(i) + (x*7)] == turn){
                 if(AIgamestate[(i) + (((x - 1)*7) + 1)] == turn){

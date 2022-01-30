@@ -105,10 +105,15 @@ io.on('connection', (socket) => {
     io.to(roomCode).emit("startGame", gamestate)
     })
 
-    
+
     socket.on('quitGame', (data) => {
         var roomCode = getRoomCode(data)
     io.to(roomCode).emit("gameLeft", roomCode)
+    })
+
+    socket.on('allplayersLeave', (data) => {
+        var roomCode = getRoomCode(data)
+        socket.leave(roomCode)
     })
 
     socket.on('associateTurn', (data) => {

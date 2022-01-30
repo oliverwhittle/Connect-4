@@ -106,7 +106,7 @@ menuButton.addEventListener('click', () => {
 });
 
 socket.on('gameLeft', (data) => {
-    socket.leave(data)
+    socket.emit('allplayersLeave', socket.io.engine.id);
     menu();
 });
 

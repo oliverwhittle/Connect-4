@@ -46,16 +46,16 @@ var lines
 var playingAiGame = false;
 var playingGame = false;
 
-socket.on('maxPlayers', () => {
-    mainMenu.style.display = "none";
-    gameScreen.style.display = "none";
-    gameResults.style.display = "none";
-    playercapFilled.style.display = "block";
-    menuButton.style.display = "none";
-    restartButton.style.display = "none";
-    gameSettings.style.display = "none";
-    socket.disconnect(true);
-});
+//socket.on('maxPlayers', () => {
+//    mainMenu.style.display = "none";
+//    gameScreen.style.display = "none";
+//    gameResults.style.display = "none";
+//    playercapFilled.style.display = "block";
+//    menuButton.style.display = "none";
+//    restartButton.style.display = "none";
+//    gameSettings.style.display = "none";
+//    socket.disconnect(true);
+//});
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;

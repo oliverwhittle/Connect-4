@@ -536,6 +536,7 @@ function getRandomInt(max) {
  
 function checkWin(turn, AIgamestate){
     winner = ""
+    console.log(AIgamestate)
     //vertical
     for(let i = 0; i < 3; i++){
         for(let x = 0; x < 6; x++){

@@ -148,6 +148,7 @@ io.on('connection', (socket) => {
             } else if(found == true){
             }
         }
+        
         //vertical
         winner = ""
         for(let i = 0; i < 3; i++){

@@ -446,35 +446,6 @@ function chooseAIplace(AIgamestate){
     let chosenPlace = false
     cellElement.forEach((cell, position) => {
         if(!chosenPlace && !checkWin(R_class, AIgamestate)){
-            if (AIgamestate[position] == blankCell) {
-                if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
-                    if (chosenPlace == false){    
-                        cell.classList.add(Y_class);
-                        AIgamestate[position] = Y_class;
-                        if (checkWin(Y_class, AIgamestate)){
-                            chosenPlace = true
-                        } else if(!checkWin(Y_class, AIgamestate)){
-                            cell.classList.remove(Y_class);
-                            AIgamestate[position] = blankCell
-                            chosenPlace = false
-                        }
-                    }
-                    if (chosenPlace == false){    
-                        cell.classList.add(R_class);
-                        AIgamestate[position] = R_class;
-                        if (checkWin(R_class, AIgamestate)){
-                            cell.classList.remove(R_class);
-                            AIgamestate[position] = Y_class
-                            cell.classList.add(Y_class);
-                            chosenPlace = true
-                        } else if(!checkWin(R_class, AIgamestate)){
-                            cell.classList.remove(R_class);
-                            AIgamestate[position] = blankCell
-                            chosenPlace = false
-                        }
-                    }
-                }
-            }
             if(position == 41 && chosenPlace == false){
                 if(checkDraw()){
                 
@@ -507,6 +478,37 @@ function chooseAIplace(AIgamestate){
                         }
                     } while(!chosenPlace);
                 }
+            }
+            if (AIgamestate[position] == blankCell) {
+                if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
+                    if (chosenPlace == false){    
+                        cell.classList.add(Y_class);
+                        AIgamestate[position] = Y_class;
+                        if (checkWin(Y_class, AIgamestate)){
+                            chosenPlace = true
+                        } else if(!checkWin(Y_class, AIgamestate)){
+                            cell.classList.remove(Y_class);
+                            AIgamestate[position] = blankCell
+                            chosenPlace = false
+                        }
+                    }
+                    if (chosenPlace == false){    
+                        cell.classList.add(R_class);
+                        AIgamestate[position] = R_class;
+                        if (checkWin(R_class, AIgamestate)){
+                            cell.classList.remove(R_class);
+                            AIgamestate[position] = Y_class
+                            cell.classList.add(Y_class);
+                            chosenPlace = true
+                        } else if(!checkWin(R_class, AIgamestate)){
+                            cell.classList.remove(R_class);
+                            AIgamestate[position] = blankCell
+                            chosenPlace = false
+                        }
+                    }
+                }
+            }else{
+                
             }
         } else{
 

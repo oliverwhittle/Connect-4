@@ -446,11 +446,7 @@ function chooseAIplace(AIgamestate){
     let chosenPlace = false
     cellElement.forEach((cell, position) => {
         if(!chosenPlace && !checkWin(R_class, AIgamestate)){
-            if (AIgamestate[position] == R_class){
-                
-            } else if (AIgamestate[position] == Y_class) {
-                    
-            } else if (AIgamestate[position] == blankCell) {
+            if (AIgamestate[position] == blankCell) {
                 if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
                     cell.classList.add(Y_class);
                     AIgamestate[position] = Y_class;
@@ -463,12 +459,7 @@ function chooseAIplace(AIgamestate){
                     }
                 }
             }
-
-            if (AIgamestate[position] == R_class){
-                
-            } else if (AIgamestate[position] == Y_class) {
-                    
-            } else if (AIgamestate[position] == blankCell) {
+            if (AIgamestate[position] == blankCell) {
                 if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
                     cell.classList.add(R_class);
                     AIgamestate[position] = R_class;

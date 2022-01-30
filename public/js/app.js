@@ -139,12 +139,6 @@ socket.on('disconecting', (data) => {
     playerCount = data
 });
 
-//$("#startButton").hover(function(){
-//    $(this).html("Start\n" + playerCount + "/2");
-//},function(){
-//    $(this).html("Start");
-//});
-
 socket.on('startGame', (data) => {
     updateBoard(data);
     socket.emit('associateTurn', socket.io.engine.id) 
@@ -388,7 +382,7 @@ function runAIGame(){
         cell.classList.remove(Y_class);
     })
     row.forEach(cell => {
-        cell.addEventListener('click', xPlaced, {once: false})
+        cell.addEventListener('click', rPlaced, {once: false})
     })
     setAIHoverClass()
 }
@@ -398,15 +392,15 @@ function setAIHoverClass(){
     gridElement.classList.add(R_class)
 }
 
-function xPlaced(e){
+function rPlaced(e){
     const cell = e.target  
     if(!(cell.classList.contains(R_class) || cell.classList.contains(Y_class))){
-        placeXPiece(cell, R_class)
+        placeRPiece(cell, R_class)
     } else {
     }
 }
 
-function placeXPiece(cell, R_class){
+function placeRPiece(cell, R_class){
     cell.classList.add(R_class) 
     let data = $(cell).index() 
     let found = false
@@ -415,7 +409,7 @@ function placeXPiece(cell, R_class){
                 if((AIgamestate[data + (i*7)] == "R") || (AIgamestate[data + (i*7)] == "Y")){
                     found = true
                     AIgamestate[(data + (i*7)) - 7] = R_class;
-                } else if(i * 7 == 41){ // this willl eventualy be removed
+                } else if(i * 7 == 41){
                     AIgamestate[i] = R_class;
                 } else if ((AIgamestate[data + (i*7)] == " ")){
                     if(data + (i*7) >= 35){
@@ -439,22 +433,7 @@ function placeXPiece(cell, R_class){
     chooseAIplace(AIgamestate);
 }
 
-function chunk (items, size) {  
-    const chunks = []
-    items = [].concat(...items)
-  
-    while (items.length) {
-      chunks.push(
-        items.splice(0, size)
-      )
-    }
-    return chunks
-  }
-
-
-//this algorithm will have to go
 function chooseAIplace(AIgamestate){
-    //let tempgameState = AIgamestate
     let blankCell = " "
     let chosenPlace = false
     cellElement.forEach((cell, position) => {

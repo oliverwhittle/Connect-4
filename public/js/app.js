@@ -539,7 +539,7 @@ function checkWin(turn, AIgamestate){
     console.log(AIgamestate)
     //vertical
     for(let i = 0; i < 3; i++){
-        for(let x = 0; x < 6; x++){
+        for(let x = 0; x < 7; x++){
             if(AIgamestate[(i*7)+(x)] == turn){
                 if(AIgamestate[(i*7)+(x) + 7] == turn){
                     if(AIgamestate[(i*7)+(x) + 14] == turn){
@@ -553,7 +553,7 @@ function checkWin(turn, AIgamestate){
     } 
     //horisontal
     for(let i = 0; i < 6; i++){
-        for(let x = 0; x < 4; x++){
+        for(let x = 0; x < 5; x++){
             if(AIgamestate[((i*7) + x)] == turn){
                 if(AIgamestate[((i*7) + x) + 1] == turn){
                     if(AIgamestate[((i*7) + x) + 2] == turn){
@@ -565,7 +565,7 @@ function checkWin(turn, AIgamestate){
             }
         }
     }
-    //diagonal l2r
+    //diagonal l2r down
     for(let i = 0; i < 4; i++){
         for(let x = 0; x < 3; x++){
             if(AIgamestate[(i) + (x*7)] == turn){
@@ -579,13 +579,13 @@ function checkWin(turn, AIgamestate){
             }
         }
     }
-    //diagonal r2l
-    for(let i = 7; i > 3; i--){
-        for(let x = 6; x > 3; x--){
+    //diagonal l2r up
+    for(let i = 0; i < 4; i--){
+        for(let x = 5; x > 3; x--){
             if(AIgamestate[(i) + (x*7)] == turn){
-                if(AIgamestate[(i) + (((x + 1)*7) - 1)] == turn){
-                    if(AIgamestate[(i) + (((x + 2)*7) - 2)] == turn){
-                        if(AIgamestate[(i) + (((x + 3)*7) - 3)] == turn){
+                if(AIgamestate[(i) + (((x - 1)*7) + 1)] == turn){
+                    if(AIgamestate[(i) + (((x - 2)*7) + 2)] == turn){
+                        if(AIgamestate[(i) + (((x - 3)*7) + 3)] == turn){
                             winner = turn
                         }
                     }

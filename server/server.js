@@ -148,11 +148,11 @@ io.on('connection', (socket) => {
             } else if(found == true){
             }
         }
-        
+
         //vertical
         winner = ""
         for(let i = 0; i < 3; i++){
-            for(let x = 0; x < 6; x++){
+            for(let x = 0; x < 7; x++){
                 if(gamestate.board[(i*7)+(x)] == gamestate.turn){
                     if(gamestate.board[(i*7)+(x) + 7] == gamestate.turn){
                         if(gamestate.board[(i*7)+(x) + 14] == gamestate.turn){
@@ -166,7 +166,7 @@ io.on('connection', (socket) => {
         } 
         //horisontal
         for(let i = 0; i < 6; i++){
-            for(let x = 0; x < 4; x++){
+            for(let x = 0; x < 5; x++){
                 if(gamestate.board[((i*7) + x)] == gamestate.turn){
                     if(gamestate.board[((i*7) + x) + 1] == gamestate.turn){
                         if(gamestate.board[((i*7) + x) + 2] == gamestate.turn){
@@ -178,7 +178,7 @@ io.on('connection', (socket) => {
                 }
             }
         }
-        //diagonal l2r
+        //diagonal l2r down
         for(let i = 0; i < 4; i++){
             for(let x = 0; x < 3; x++){
                 if(gamestate.board[(i) + (x*7)] == gamestate.turn){
@@ -192,9 +192,9 @@ io.on('connection', (socket) => {
                 }
             }
         }
-        //diagonal r2l
-        for(let i = 7; i > 3; i--){
-            for(let x = 6; x > 3; x--){
+        //diagonal l2r up
+        for(let i = 0; i < 4; i--){
+            for(let x = 5; x > 3; x--){
                 if(gamestate.board[(i) + (x*7)] == gamestate.turn){
                     if(gamestate.board[(i) + (((x + 1)*7) - 1)] == gamestate.turn){
                         if(gamestate.board[(i) + (((x + 2)*7) - 2)] == gamestate.turn){

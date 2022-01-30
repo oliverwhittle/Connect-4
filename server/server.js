@@ -68,9 +68,7 @@ io.on('connection', (socket) => {
 
     socket.on('waitingRoom', (roomCode, socketIdentifier, gamestate) => {
         console.log("This is running")
-        //this needs fixing
         socket.join(roomCode);
-        var roomtoConnect;
         var clientsInRoom = []
         for (var i = 0; i < clients.length; i++){
             if (clients[i].socketID == socketIdentifier ){
@@ -107,9 +105,9 @@ io.on('connection', (socket) => {
     io.to(roomCode).emit("startGame", gamestate)
     })
 
-    socket.on('menu', (data) => {
+    socket.on('quitGame', (data) => {
         var roomCode = getRoomCode(data)
-    io.to(roomCode).emit("menu")
+    io.to(roomCode).emit("gameLeft", roomCode)
     })
 
     socket.on('associateTurn', (data) => {

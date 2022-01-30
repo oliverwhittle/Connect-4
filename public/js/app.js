@@ -44,6 +44,7 @@ let clientTurn
 let playerCount = 0
 var lines
 var playingAiGame = false;
+var playingGame = false;
 
 //socket.on('maxPlayers', () => {
 //    mainMenu.style.display = "none";
@@ -58,7 +59,6 @@ var playingAiGame = false;
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
-    //socket.emit('gamesettings');
     mainMenu.style.display = "none";
     gameSettings.style.display = "block";
     
@@ -76,6 +76,7 @@ joingameButton.addEventListener('click', () => {
     if (joinCode.value.length > 0){
         console.log("THIS RUNS")
         gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
+        playingGame = true;
         socket.emit('waitingRoom', joinCode.value, socket.io.engine.id, gamestate);
     }
 });
@@ -94,15 +95,42 @@ socket.on('gameReloaded', (data) => {
     socket.emit('gameRestart', socket.io.engine.id, gamestate);
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 menuButton.addEventListener('click', () => {
+    if (playingAiGame == true){
+        //
+    }else if (playingGame == true){
+        socket.emit('quitGame', socket.io.engine.id);
+    }else{
+        socket.emit('reloadGame', socket.io.engine.id);
+    }
     socket.emit('menu', socket.io.engine.id);
+});
+
+socket.on('gameLeft', (data) => {
+    socket.leave(data)
+    menu();
 });
 
 AIButton.addEventListener('click', () => {
     runAIGame();
 });
 
-socket.on('menu', (data) => {
+function menu(){
     mainMenu.style.display = "block"
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
@@ -112,7 +140,7 @@ socket.on('menu', (data) => {
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
-});
+}
 
 confirmButton.addEventListener('click', () => {
     if (userName.value.length == 0){

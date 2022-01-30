@@ -454,7 +454,7 @@ function chooseAIplace(AIgamestate){
                 if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
                     cell.classList.add(Y_class);
                     AIgamestate[position] = Y_class;
-                    if (checkWin(R_class, AIgamestate)){
+                    if (checkWin(Y_class, AIgamestate)){
                         chosenPlace = true
                     } else if(!checkWin(Y_class, AIgamestate)){
                         cell.classList.remove(Y_class);

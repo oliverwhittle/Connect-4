@@ -430,9 +430,9 @@ function placeRPiece(cell, R_class){
                 cell.classList.add(Y_class);
             }
     })
-    if (checkWin(R_class, AIgamestate)){
+    if (checkWin(R_class, AIgamestate) == R_class){
         playerWin(R_class)
-    }else if (checkWin(Y_class, AIgamestate)){
+    }else if (checkWin(Y_class, AIgamestate) == Y_class){
         playerWin(Y_class)
     }else if (checkDraw()){
         playerDraw()
@@ -445,7 +445,7 @@ function chooseAIplace(AIgamestate){
     let blankCell = " "
     let chosenPlace = false
     cellElement.forEach((cell, position) => {
-        if(!chosenPlace && !checkWin(R_class, AIgamestate)){
+        if(!chosenPlace && checkWin(R_class, AIgamestate) != R_class){
             if (AIgamestate[position] == R_class || AIgamestate[position] == Y_class){
 
             }else if (AIgamestate[position] == blankCell) {
@@ -453,9 +453,9 @@ function chooseAIplace(AIgamestate){
                     if (chosenPlace == false){    
                         cell.classList.add(Y_class);
                         AIgamestate[position] = Y_class;
-                        if (checkWin(Y_class, AIgamestate)){
+                        if (checkWin(Y_class, AIgamestate) == Y_class){
                             chosenPlace = true
-                        } else if(!checkWin(Y_class, AIgamestate)){
+                        } else if(checkWin(Y_class, AIgamestate) != Y_class){
                             cell.classList.remove(Y_class);
                             AIgamestate[position] = blankCell
                             chosenPlace = false
@@ -464,12 +464,12 @@ function chooseAIplace(AIgamestate){
                     if (chosenPlace == false){    
                         cell.classList.add(R_class);
                         AIgamestate[position] = R_class;
-                        if (checkWin(R_class, AIgamestate)){
+                        if (checkWin(R_class, AIgamestate) == R_class){
                             cell.classList.remove(R_class);
                             AIgamestate[position] = Y_class
                             cell.classList.add(Y_class);
                             chosenPlace = true
-                        } else if(!checkWin(R_class, AIgamestate)){
+                        } else if(checkWin(R_class, AIgamestate) != R_class){
                             cell.classList.remove(R_class);
                             AIgamestate[position] = blankCell
                             chosenPlace = false

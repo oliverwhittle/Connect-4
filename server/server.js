@@ -118,7 +118,7 @@ io.on('connection', (socket) => {
         } else if(clientsInRoom.length == 1){
             clientsInRoom[0].colour = "R"
         } else{
-            //HERE
+            
         }  
         if(data == clientsInRoom[0].socketID){
             assignedTurn = clientsInRoom[0].colour

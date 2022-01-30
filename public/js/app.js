@@ -429,16 +429,16 @@ function placeRPiece(cell, R_class){
             } else if (AIgamestate[position] == Y_class) {
                 cell.classList.add(Y_class);
             }
-    })
-    if (checkWin(R_class, AIgamestate) == R_class){
-        playerWin(R_class)
-    }else if (checkWin(Y_class, AIgamestate) == Y_class){
-        playerWin(Y_class)
-    }else if (checkDraw()){
-        playerDraw()
-    }else{
-        chooseAIplace(AIgamestate);
-    }
+        })
+        if (checkWin(R_class, AIgamestate) == R_class){
+            playerWin(R_class)
+        }else if (checkWin(Y_class, AIgamestate) == Y_class){
+            playerWin(Y_class)
+        }else if (checkDraw()){
+            playerDraw()
+        }else{
+            chooseAIplace(AIgamestate);
+        }
 }
 
 function chooseAIplace(AIgamestate){
@@ -515,6 +515,15 @@ function chooseAIplace(AIgamestate){
 
         }
     });
+    if (checkWin(R_class, AIgamestate) == R_class){
+        playerWin(R_class)
+    }else if (checkWin(Y_class, AIgamestate) == Y_class){
+        playerWin(Y_class)
+    }else if (checkDraw()){
+        playerDraw()
+    }else{
+        chooseAIplace(AIgamestate);
+    }
 }
 
 function getRandomInt(max) {

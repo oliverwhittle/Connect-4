@@ -196,9 +196,9 @@ io.on('connection', (socket) => {
         for(let i = 0; i < 4; i--){
             for(let x = 5; x > 3; x--){
                 if(gamestate.board[(i) + (x*7)] == gamestate.turn){
-                    if(gamestate.board[(i) + (((x + 1)*7) - 1)] == gamestate.turn){
-                        if(gamestate.board[(i) + (((x + 2)*7) - 2)] == gamestate.turn){
-                            if(gamestate.board[(i) + (((x + 3)*7) - 3)] == gamestate.turn){
+                    if(gamestate.board[(i) + (((x - 1)*7) + 1)] == gamestate.turn){
+                        if(gamestate.board[(i) + (((x - 2)*7) + 2)] == gamestate.turn){
+                            if(gamestate.board[(i) + (((x - 3)*7) + 3)] == gamestate.turn){
                                 winner = gamestate.turn
                             }
                         }

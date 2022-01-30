@@ -103,7 +103,6 @@ menuButton.addEventListener('click', () => {
     }else{
         socket.emit('reloadGame', socket.io.engine.id);
     }
-    socket.emit('menu', socket.io.engine.id);
 });
 
 socket.on('gameLeft', (data) => {
@@ -126,6 +125,18 @@ function menu(){
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
 }
+
+socket.on('menu', (data) =>{
+    mainMenu.style.display = "block"
+    playerLogin.style.display = "none";
+    playerstatsPage.style.display = "none";
+    gameScreen.style.display = "none";
+    playercapFilled.style.display = "none";
+    gameResults.style.display = "none";
+    menuButton.style.display = "none";
+    restartButton.style.display = "none";
+    gameSettings.style.display = "none";
+});
 
 confirmButton.addEventListener('click', () => {
     if (userName.value.length == 0){

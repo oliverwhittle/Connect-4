@@ -522,7 +522,7 @@ function chooseAIplace(AIgamestate){
     }else if (checkDraw()){
         playerDraw()
     }else{
-        chooseAIplace(AIgamestate);
+        
     }
 }
 

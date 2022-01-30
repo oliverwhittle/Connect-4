@@ -431,8 +431,10 @@ function placeRPiece(cell, R_class){
             }
         })
         if (checkWin(R_class, AIgamestate) == R_class){
+            console.log(AIgamestate)
             playerWin(R_class)
         }else if (checkWin(Y_class, AIgamestate) == Y_class){
+            console.log(AIgamestate)
             playerWin(Y_class)
         }else if (checkDraw()){
             playerDraw()
@@ -516,8 +518,10 @@ function chooseAIplace(AIgamestate){
         }
     });
     if (checkWin(R_class, AIgamestate) == R_class){
+        console.log(AIgamestate)
         playerWin(R_class)
     }else if (checkWin(Y_class, AIgamestate) == Y_class){
+        console.log(AIgamestate)
         playerWin(Y_class)
     }else if (checkDraw()){
         playerDraw()

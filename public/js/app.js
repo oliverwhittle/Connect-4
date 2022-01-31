@@ -118,6 +118,7 @@ function menu(){
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
+    winningPlayer.style.display = "none";
 }
 
 socket.on('menu', (data) =>{
@@ -129,6 +130,7 @@ socket.on('menu', (data) =>{
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
+    winningPlayer.style.display = "none";
 });
 
 confirmButton.addEventListener('click', () => {
@@ -163,6 +165,7 @@ function startGame() {
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
+    winningPlayer.style.display = "none";
     row.forEach(cell => {
     cell.addEventListener('click', handleClick, {once: false})
     })
@@ -380,6 +383,7 @@ function runAIGame(){
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
+    winningPlayer.style.display = "none";
     playingAiGame = true;
     AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
     

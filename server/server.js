@@ -4,6 +4,7 @@ const express = require('express');
 const socketIO = require('socket.io');
 
 const fs = require('fs');
+const { Socket } = require('net');
 const file = "public/textfiles/stats.txt"
 const publicPath    = path.join(__dirname, '/../public');
 const port = process.env.PORT || 3000;
@@ -232,17 +233,24 @@ io.on('connection', (socket) => {
         var roomCode = getRoomCode(socketIdentifier)
         userData = {name: "temp", wins: userWins }
         lines = fs.readFileSync(file, 'utf-8').toString().split(",");
-        for( var i=0, len=clients.length; i<len; ++i ){
-            var c = clients[i].colour;
+        var clientsInRoom = []
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].room == roomCode ){
+                clientsInRoom.push(clients[i])
+            }
+        }
+        for( var i=0, len=clientsInRoom.length; i<len; ++i ){
+            var c = clientsInRoom[i].colour;
             if(c == data){
-                userData.name = clients[i].playerName
-                if(linearSearch(lines, userData.name) !== -1){
-                    userData.wins = (parseFloat(lines[(linearSearch(lines, userData.name) + 1)])+ 0.5) // this happens beacuse this is actualy called twice
-                    lines[linearSearch(lines, userData.name) + 1] = userData.wins
-                }else if(linearSearch(lines, userData.name) == -1){
-                    userData.wins = 0.5 
-                    lines.push([userData.name, userData.wins])
-                }
+                userData.name = clientsInRoom[i].playerName
+                if (clientsInRoom[i].socketID == socketIdentifier)
+                    if(linearSearch(lines, userData.name) !== -1){
+                        userData.wins = (parseFloat(lines[(linearSearch(lines, userData.name) + 1)]) + 1) // this happens beacuse this is actualy called twice
+                        lines[linearSearch(lines, userData.name) + 1] = userData.wins
+                    }else if(linearSearch(lines, userData.name) == -1){
+                        userData.wins = 1
+                        lines.push([userData.name, userData.wins])
+                    }
             }else{
             }
         }

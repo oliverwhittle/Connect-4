@@ -192,6 +192,7 @@ function playerWin(origionalTurn){
     //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
+    winningPlayer.style.display = "block";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     winningPlayer.textContent = origionalTurn + " is the winner!"
@@ -201,6 +202,7 @@ function playerDraw(){
     //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
+    winningPlayer.style.display = "block";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     winningPlayer.textContent = "It is a draw!"

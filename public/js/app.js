@@ -189,7 +189,7 @@ socket.on('draw', (data) => {
 });
 
 function playerWin(origionalTurn){
-    gameScreen.style.display = "none";
+    //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     menuButton.style.display = "block";
@@ -198,7 +198,7 @@ function playerWin(origionalTurn){
 }
 
 function playerDraw(){
-    gameScreen.style.display = "none";
+    //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     menuButton.style.display = "block";

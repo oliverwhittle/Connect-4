@@ -85,7 +85,7 @@ body{
     transform: translate(-50%, -50%);
     border-radius: 25px;
     width: 1000px;
-    height: 480px;
+    height: 120px;
     transition: 0.1s ease all;
     text-align: center;
     font-size: 100px; 

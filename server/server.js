@@ -94,6 +94,11 @@ io.on('connection', (socket) => {
 
     socket.on('quitGame', (data) => {
         var roomCode = getRoomCode(data)
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].socketID == data ){
+                clients[i].colour = " "
+            }
+        }
     io.to(roomCode).emit("gameLeft", roomCode)
     })
 

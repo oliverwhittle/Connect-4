@@ -377,6 +377,7 @@ function runAIGame(){
     gameSettings.style.display = "none";
     playingAiGame = true;
     AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
+    
     cellElement.forEach((cell) => {
         cell.classList.remove(R_class);
         cell.classList.remove(Y_class);

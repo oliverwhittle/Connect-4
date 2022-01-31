@@ -409,7 +409,7 @@ body{
   width: 700px;
   height: 90px;
   position: fixed;
-  top: 85%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;

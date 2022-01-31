@@ -400,8 +400,19 @@ body{
   border: 0px;
   border-radius: 25px;
   text-align: center;
-  vertical-align: middle;
   background-color: #FFD166;
+}
+
+.roomcodeContainer{
+  background:#3d0dec;
+  border-radius: 25px;
+  width: 700px;
+  height: 90px;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .joinCode{

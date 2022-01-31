@@ -93,6 +93,8 @@ menuButton.addEventListener('click', () => {
 });
 
 socket.on('gameLeft', (data) => {
+    gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
+    socket.emit('updateGamestate', gamestate, socket.io.engine.id)
     socket.emit('allplayersLeave', socket.io.engine.id);
     playingGame == false;
     menu();

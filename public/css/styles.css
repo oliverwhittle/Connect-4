@@ -12,8 +12,8 @@
 
 .playerstatsName{
     position: fixed;
-    top: 20%;
-    left: 33%;
+    top: 10%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 70px;
     text-align: center;
@@ -22,8 +22,8 @@
 
 .playerstatsWins{
     position: fixed;
-    top: 30%;
-    left: 33%;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 70px;
     text-align: center;

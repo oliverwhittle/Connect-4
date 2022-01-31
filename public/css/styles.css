@@ -405,6 +405,7 @@ body{
 }
 
 .joinCode{
+  display: inline;
   position: fixed;
   top: 85%;
   left: 50%;

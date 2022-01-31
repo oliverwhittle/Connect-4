@@ -400,6 +400,7 @@ body{
   border: 0px;
   border-radius: 25px;
   text-align: center;
+  vertical-align: middle;
   background-color: #FFD166;
 }
 
@@ -414,7 +415,6 @@ body{
   border: 0px;
   border-radius: 25px;
   text-align: center;
-  vertical-align: middle;
 }
 
 .settingsContainer{

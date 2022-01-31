@@ -44,12 +44,13 @@ let playerCount = 0
 var lines
 var playingAiGame = false;
 var playingGame = false;
+var gameOver = false;
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
     mainMenu.style.display = "none";
     gameSettings.style.display = "block";
-    
+    menuButton.style.display = "block"
 });
 
 creategameButton.addEventListener('click', () => {
@@ -168,7 +169,7 @@ function startGame() {
 function handleClick(e){
     const cell = e.target
     console.log("cell clicked")
-    if(clientTurn == rTurn){
+    if(clientTurn == rTurn && gameOver == false){
         placePiece(cell, rTurn)
     } else {
         console.log("no")
@@ -189,6 +190,7 @@ socket.on('draw', (data) => {
 });
 
 function playerWin(origionalTurn){
+    gameOver = true;
     //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
@@ -199,6 +201,7 @@ function playerWin(origionalTurn){
 }
 
 function playerDraw(){
+    gameOver = true;
     //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
@@ -395,7 +398,7 @@ function setAIHoverClass(){
 
 function rPlaced(e){
     const cell = e.target  
-    if(!(cell.classList.contains(R_class) || cell.classList.contains(Y_class))){
+    if(!(cell.classList.contains(R_class) || cell.classList.contains(Y_class)) && gameOver == false){
         placeRPiece(cell, R_class)
     } else {
     }

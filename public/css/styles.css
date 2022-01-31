@@ -390,6 +390,7 @@ body{
 }
 
 .roomCode{
+  display: inline;
   position: fixed;
   top: 40%;
   left: 50%;
@@ -405,7 +406,6 @@ body{
 }
 
 .joinCode{
-  display: inline;
   position: fixed;
   top: 85%;
   left: 50%;

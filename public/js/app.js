@@ -14,7 +14,6 @@ const joingameButton = document.querySelector('.btn-join-game');
 const mainMenu = document.querySelector('.mainMenu')
 const gameScreen = document.querySelector('.gameScreen')
 const gameResults = document.querySelector('.gameResults');
-const playercapFilled = document.querySelector('.maxPlayers');
 const playerLogin = document.querySelector('.playerLogin');
 const playerstatsPage = document.querySelector('.playerstatsPage');
 const gameSettings = document.querySelector('.gameSettings');
@@ -108,7 +107,6 @@ function menu(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    playercapFilled.style.display = "none";
     gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
@@ -120,7 +118,6 @@ socket.on('menu', (data) =>{
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    playercapFilled.style.display = "none";
     gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
@@ -155,7 +152,6 @@ function startGame() {
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    playercapFilled.style.display = "none";
     gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
@@ -272,7 +268,6 @@ function statsPage(lines){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "block";
     gameScreen.style.display = "none";
-    playercapFilled.style.display = "none";
     gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "none";
@@ -370,7 +365,6 @@ function runAIGame(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    playercapFilled.style.display = "none";
     gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";

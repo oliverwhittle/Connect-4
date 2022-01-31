@@ -386,6 +386,7 @@ function runAIGame(){
 
 function setAIHoverClass(){
     gridElement.classList.remove(R_class)
+    gridElement.classList.remove(Y_class)
     gridElement.classList.add(R_class)
 }
 

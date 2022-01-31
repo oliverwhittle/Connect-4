@@ -195,7 +195,7 @@ function playerWin(origionalTurn){
     winningPlayer.style.display = "block";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
-    winningPlayer.textContent = origionalTurn + " is the winner!"
+    winningPlayer.textContent = origionalTurn + " wins!"
 }
 
 function playerDraw(){

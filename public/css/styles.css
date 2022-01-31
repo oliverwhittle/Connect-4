@@ -81,12 +81,11 @@ body{
     display: none;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 15%;
     transform: translate(-50%, -50%);
     border-radius: 25px;
-    width: 720px;
+    width: 1000px;
     height: 480px;
-    background: #FFD166;
     transition: 0.1s ease all;
     text-align: center;
     font-size: 100px; 

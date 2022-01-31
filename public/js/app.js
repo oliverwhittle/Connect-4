@@ -66,14 +66,17 @@ joingameButton.addEventListener('click', () => {
         console.log("THIS RUNS")
         gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
         playingGame = true;
+        gameOver = false;
         socket.emit('waitingRoom', joinCode.value, socket.io.engine.id, gamestate);
     }
 });
 
 restartButton.addEventListener('click', () => {
     if (playingAiGame == true){
+        gameOver = false;
         runAIGame();
     }else if (playingAiGame == false){
+        gameOver = false;
         socket.emit('reloadGame', socket.io.engine.id);
     }
 });

@@ -390,7 +390,6 @@ body{
 }
 
 .roomCode{
-  display: inline;
   position: fixed;
   top: 40%;
   left: 50%;

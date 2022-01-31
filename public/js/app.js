@@ -13,7 +13,7 @@ const joingameButton = document.querySelector('.btn-join-game');
 //<-----------SECTIONS---------->//
 const mainMenu = document.querySelector('.mainMenu')
 const gameScreen = document.querySelector('.gameScreen')
-const gameResults = document.querySelector('.gameResults');
+
 const playerLogin = document.querySelector('.playerLogin');
 const playerstatsPage = document.querySelector('.playerstatsPage');
 const gameSettings = document.querySelector('.gameSettings');
@@ -21,6 +21,7 @@ const gameSettings = document.querySelector('.gameSettings');
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
 const joinCode = document.querySelector('.joinCode')
+const gameResults = document.querySelector('.gameResults');
 const userName = document.querySelector('.userName');
 const winningPlayer = document.querySelector('.winningPlayer');
 const playerstatsName = document.querySelector('.playerstatsName');
@@ -109,7 +110,7 @@ function menu(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    gameResults.style.display = "none";
+    //gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
@@ -120,7 +121,7 @@ socket.on('menu', (data) =>{
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    gameResults.style.display = "none";
+    //gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
@@ -154,7 +155,7 @@ function startGame() {
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    gameResults.style.display = "none";
+    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
@@ -270,7 +271,7 @@ function statsPage(lines){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "block";
     gameScreen.style.display = "none";
-    gameResults.style.display = "none";
+    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
@@ -367,7 +368,7 @@ function runAIGame(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    gameResults.style.display = "none";
+    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";

@@ -90,6 +90,7 @@ body{
     transition: 0.1s ease all;
     text-align: center;
     font-size: 100px; 
+    display: none;
 }
 
 .winningPlayer{
@@ -104,6 +105,7 @@ body{
     color: black;
     background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
     font-family: Inter, sans-serif;
+    display: none;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -335,7 +337,7 @@ body{
 
 /*------------------------------------------------------------------------------*/
 
-.mainMenu, .playerstatsPage, .gameScreen, .playercapFilled, .gameResults, .gameSettings{
+.mainMenu, .playerstatsPage, .gameScreen, .playercapFilled, .gameSettings{
   display: none;
 }
 

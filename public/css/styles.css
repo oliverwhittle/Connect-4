@@ -415,3 +415,15 @@ body{
   border-radius: 25px;
   text-align: center;
 }
+
+.settingsContainer{
+  outline: 15px solid #2a0f8b;
+  background:#3d0dec;
+  border-radius: 25px;
+  width: 400px;
+  height: 500px;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -345,7 +345,7 @@ body{
 
 .btn-create-game{
   position: fixed;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.1s ease all;
@@ -420,8 +420,8 @@ body{
   outline: 15px solid #2a0f8b;
   background:#3d0dec;
   border-radius: 25px;
-  width: 400px;
-  height: 500px;
+  width: 800px;
+  height: 900px;
   position: fixed;
   top: 55%;
   left: 50%;

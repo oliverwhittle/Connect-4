@@ -400,10 +400,12 @@ body{
   width: 700px;
   height: 90px;
   position: fixed;
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .joinCode{

@@ -114,7 +114,6 @@ function menu(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    //gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
@@ -126,7 +125,6 @@ socket.on('menu', (data) =>{
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "none";
-    //gameResults.style.display = "none";
     menuButton.style.display = "none";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
@@ -161,7 +159,6 @@ function startGame() {
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
@@ -197,7 +194,6 @@ socket.on('draw', (data) => {
 
 function playerWin(origionalTurn){
     gameOver = true;
-    //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     winningPlayer.style.display = "block";
@@ -208,7 +204,6 @@ function playerWin(origionalTurn){
 
 function playerDraw(){
     gameOver = true;
-    //gameScreen.style.display = "none";
     document.body.style.backgroundColor = "#06D6A0";
     gameResults.style.display = "block";
     winningPlayer.style.display = "block";
@@ -282,23 +277,30 @@ function statsPage(lines){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "block";
     gameScreen.style.display = "none";
-    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
-    playerstatsName.innerHTML = "Name: " + userName.value 
-    playerstatsWins.innerHTML = "Wins: " + lines[linearSearch(lines, userName.value.toLowerCase()) + 1];
-
+    
+    var noWins = false;
     var players = []
     var wins = []
-    if(lines.lenght == 1){
-        //what to do if there are no wins so far
+
+    if(lines.length == 1){
+        noWins = true
     }else{
         for( var i=1, len=lines.length - 1; i<len; i+=2 ){
             players.push(lines[i])
             wins.push(lines[i + 1])
         }
     }
+
+    playerstatsName.innerHTML = "Name: " + userName.value 
+    if (noWins){
+        playerstatsWins.innerHTML = "Wins: None";
+    }else if (!noWins){
+        playerstatsWins.innerHTML = "Wins: " + lines[linearSearch(lines, userName.value.toLowerCase()) + 1];
+    }   
+
     var xValues = players
     var yValues = wins
     var barColors = Array.apply(null, Array(5)).map(function () {})
@@ -379,7 +381,6 @@ function runAIGame(){
     playerLogin.style.display = "none";
     playerstatsPage.style.display = "none";
     gameScreen.style.display = "block";
-    //gameResults.style.display = "none";
     menuButton.style.display = "block";
     restartButton.style.display = "block";
     gameSettings.style.display = "none";

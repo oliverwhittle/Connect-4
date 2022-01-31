@@ -96,7 +96,7 @@ io.on('connection', (socket) => {
         var roomCode = getRoomCode(data)
         for (var i = 0; i < clients.length; i++){
             if (clients[i].socketID == data ){
-                clients[i].colour = " "
+                clients[i].colour = "null"
             }
         }
     io.to(roomCode).emit("gameLeft", roomCode)

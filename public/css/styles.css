@@ -250,7 +250,7 @@ body{
 .btn-menu:hover {
   margin-top: 10px;
   margin-bottom: 5px;
-  box-shadow: 0px 0px 0px 0px linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+  box-shadow: 0px 0px 0px 0px #FFD166;
 }
 
 .btn-restart{
@@ -273,7 +273,7 @@ body{
 .btn-restart:hover {
   margin-top: 10px;
   margin-bottom: 5px;
-  box-shadow: 0px 0px 0px 0px linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+  box-shadow: 0px 0px 0px 0px #FFD166 ;
 }
 
 /*------------------------------------------------------------------------------*/

@@ -166,7 +166,7 @@ io.on('connection', (socket) => {
         } 
         //horisontal
         for(let i = 0; i < 6; i++){
-            for(let x = 0; x < 5; x++){
+            for(let x = 0; x < 4; x++){
                 if(gamestate.board[((i*7) + x)] == gamestate.turn){
                     if(gamestate.board[((i*7) + x) + 1] == gamestate.turn){
                         if(gamestate.board[((i*7) + x) + 2] == gamestate.turn){

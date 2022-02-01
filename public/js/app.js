@@ -568,7 +568,7 @@ function checkWin(turn, AIgamestate){
     } 
     //horisontal
     for(let i = 0; i < 6; i++){
-        for(let x = 0; x < 5; x++){
+        for(let x = 0; x < 4; x++){
             if(AIgamestate[((i*7) + x)] == turn){
                 if(AIgamestate[((i*7) + x) + 1] == turn){
                     if(AIgamestate[((i*7) + x) + 2] == turn){

@@ -458,7 +458,7 @@ function placeRPiece(cell, R_class){
 function delay(AIgamestate) {
     setTimeout(function() {
         chooseAIplace(AIgamestate);
-    }, 2000);
+    }, 1000);
   }
 
 function chooseAIplace(AIgamestate){

@@ -247,6 +247,12 @@ body{
     display: none;
 }
 
+.btn-menu:hover {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+}
+
 .btn-restart{
     position: fixed;
     top: 90%;
@@ -262,6 +268,12 @@ body{
     font-size: 25px;
     cursor:pointer;
     display: none;
+}
+
+.btn-restart:hover {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
 }
 
 /*------------------------------------------------------------------------------*/

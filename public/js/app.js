@@ -469,7 +469,7 @@ function chooseAIplace(AIgamestate){
             if (AIgamestate[position] == R_class || AIgamestate[position] == Y_class){
 
             }else if (AIgamestate[position] == blankCell) {
-                if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
+                //if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
                     if (chosenPlace == false){    
                         cell.classList.add(Y_class);
                         AIgamestate[position] = Y_class;
@@ -495,7 +495,7 @@ function chooseAIplace(AIgamestate){
                             chosenPlace = false
                         }
                     }
-                }
+                //}
             }
             if(position == 41 && chosenPlace == false){
                 if(checkDraw()){

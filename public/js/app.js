@@ -64,6 +64,7 @@ joingameButton.addEventListener('click', () => {
     console.log(joinCode.value)
     var pattern = /^[0-9,a-z]{6}$/
     if (joinCode.value.length > 0 && pattern.test(joinCode.value)){
+        console.log("Hi")
         gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
         playingGame = true;
         gameOver = false;

@@ -62,8 +62,8 @@ creategameButton.addEventListener('click', () => {
 
 joingameButton.addEventListener('click', () => {
     console.log(joinCode.value)
-    if (joinCode.value.length > 0){
-        console.log("THIS RUNS")
+    var pattern = /^[0-9,a-z]{6}$/
+    if (joinCode.value.length > 0 && pattern.test(joinCode.value)){
         gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
         playingGame = true;
         gameOver = false;

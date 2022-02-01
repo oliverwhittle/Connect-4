@@ -245,7 +245,7 @@ io.on('connection', (socket) => {
                 userData.name = clientsInRoom[i].playerName
                 if (clientsInRoom[i].socketID == socketIdentifier)
                     if(linearSearch(lines, userData.name) !== -1){
-                        userData.wins = (parseFloat(lines[(linearSearch(lines, userData.name) + 1)]) + 1) // this happens beacuse this is actualy called twice
+                        userData.wins = (parseFloat(lines[(linearSearch(lines, userData.name) + 1)]) + 1)
                         lines[linearSearch(lines, userData.name) + 1] = userData.wins
                     }else if(linearSearch(lines, userData.name) == -1){
                         userData.wins = 1

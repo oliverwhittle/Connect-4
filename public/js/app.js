@@ -469,7 +469,7 @@ function chooseAIplace(AIgamestate){
             if (AIgamestate[position] == R_class || AIgamestate[position] == Y_class){
 
             }else if (AIgamestate[position] == blankCell) {
-                //if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
+                if (position >= 35){
                     if (chosenPlace == false){    
                         cell.classList.add(Y_class);
                         AIgamestate[position] = Y_class;
@@ -495,7 +495,33 @@ function chooseAIplace(AIgamestate){
                             chosenPlace = false
                         }
                     }
-                //}
+                }else if (AIgamestate[position + 7] == R_class || AIgamestate[position + 7] == Y_class){
+                    if (chosenPlace == false){    
+                        cell.classList.add(Y_class);
+                        AIgamestate[position] = Y_class;
+                        if (checkWin(Y_class, AIgamestate) == Y_class){
+                            chosenPlace = true
+                        } else if(checkWin(Y_class, AIgamestate) != Y_class){
+                            cell.classList.remove(Y_class);
+                            AIgamestate[position] = blankCell
+                            chosenPlace = false
+                        }
+                    }
+                    if (chosenPlace == false){    
+                        cell.classList.add(R_class);
+                        AIgamestate[position] = R_class;
+                        if (checkWin(R_class, AIgamestate) == R_class){
+                            cell.classList.remove(R_class);
+                            AIgamestate[position] = Y_class
+                            cell.classList.add(Y_class);
+                            chosenPlace = true
+                        } else if(checkWin(R_class, AIgamestate) != R_class){
+                            cell.classList.remove(R_class);
+                            AIgamestate[position] = blankCell
+                            chosenPlace = false
+                        }
+                    }
+                }
             }
             if(position == 41 && chosenPlace == false){
                 if(checkDraw()){
@@ -530,7 +556,6 @@ function chooseAIplace(AIgamestate){
                     } while(!chosenPlace);
                 }
             }
-            
         } else{
 
         }

@@ -450,9 +450,16 @@ function placeRPiece(cell, R_class){
         }else if (checkDraw()){
             playerDraw()
         }else{
-            chooseAIplace(AIgamestate);
+            delay(AIgamestate);
+            //chooseAIplace(AIgamestate);
         }
 }
+
+function delay(AIgamestate) {
+    setTimeout(function() {
+        chooseAIplace(AIgamestate);
+    }, 2000);
+  }
 
 function chooseAIplace(AIgamestate){
     let blankCell = " "

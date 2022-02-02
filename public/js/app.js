@@ -45,6 +45,7 @@ var lines
 var playingAiGame = false;
 var playingGame = false;
 var gameOver = false;
+var viewingStats = false;
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
@@ -89,7 +90,10 @@ socket.on('gameReloaded', (data) => {
 })
 
 menuButton.addEventListener('click', () => {
-    if (playingAiGame == true){
+    if (viewingStats == true){
+        viewingStats = false;
+        menu();
+    }else if (playingAiGame == true){
         menu();
     }else if (playingGame == true){
         socket.emit('quitGame', socket.io.engine.id);
@@ -282,6 +286,7 @@ function statsPage(lines){
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
     
+    viewingStats = true
     var noWins = false;
     var players = []
     var wins = []

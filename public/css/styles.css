@@ -236,7 +236,7 @@ body{
     left: 95%;
     transform: translate(-50%, -50%);
     transition: 0.1s ease all;
-    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    background: linear-gradient(-45deg, #FF134A 50%, #FFD166 50%);
     color: black;
     border: none;
     border-radius: 90px;
@@ -259,7 +259,7 @@ body{
     left: 5%;
     transform: translate(-50%, -50%);
     transition: 0.1s ease all;
-    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    background: linear-gradient(-45deg, #FF134A 50%, #FFD166 50%);
     color: black;
     border: none;
     border-radius: 90px;

@@ -77,12 +77,12 @@ restartButton.addEventListener('click', () => {
         gameOver = false;
         runAIGame();
     }else if (playingAiGame == false){
-        gameOver = false;
         socket.emit('reloadGame', socket.io.engine.id);
     }
 });
 
 socket.on('gameReloaded', (data) => {
+    gameOver = false;
     gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
     socket.emit('updateGamestate', gamestate, socket.io.engine.id)
     socket.emit('gameRestart', socket.io.engine.id, gamestate);

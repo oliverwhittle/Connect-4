@@ -13,7 +13,6 @@ const joingameButton = document.querySelector('.btn-join-game');
 //<-----------SECTIONS---------->//
 const mainMenu = document.querySelector('.mainMenu')
 const gameScreen = document.querySelector('.gameScreen')
-
 const playerLogin = document.querySelector('.playerLogin');
 const playerstatsPage = document.querySelector('.playerstatsPage');
 const gameSettings = document.querySelector('.gameSettings');

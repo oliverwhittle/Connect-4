@@ -102,7 +102,7 @@ body{
     border-radius: 25px;
     transform: translate(-50%, -50%);
     color: black;
-    background: linear-gradient(-45deg, #FF134A 50%, #0080AB 50%);
+    background: linear-gradient(-45deg, #FF134A 50%, #FFD166 50%);
     font-family: Inter, sans-serif;
     display: none;
 }

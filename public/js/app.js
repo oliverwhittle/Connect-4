@@ -253,7 +253,7 @@ function updateBoard(gamestate, winningPositions){
     if (gamestate.winner == "R" || gamestate.winner == "Y"){
         cellElement.forEach((cell, position) => {    
             if (winningPositions.includes(position)) {
-                cell.classList.add(Glowing);
+                cell.classList.add("Glowing");
             } 
         })
         socket.emit('win', origionalTurn, socket.io.engine.id);  

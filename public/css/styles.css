@@ -43,6 +43,10 @@ body{
   transform: translate(-50%, -50%);
 }
 
+#my{
+  zoom: 50%;
+}
+
 .gameTitle{
   width: 12.5ch;
   font-family: monospace;

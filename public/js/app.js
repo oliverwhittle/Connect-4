@@ -623,12 +623,15 @@ function checkWin(turn, AIgamestate){
             if(AIgamestate[((i*7) + x)] == turn){
                 console.log(((i*7) + x));
                 console.log(turn);
+                console.log(AIgamestate)
                 if(AIgamestate[((i*7) + x) + 1] == turn){
                     console.log(((i*7) + x) + 1);
                     console.log(turn);
+                    console.log(AIgamestate)
                     if(AIgamestate[((i*7) + x) + 2] == turn){
                         console.log(((i*7) + x) + 2);
                         console.log(turn);
+                        console.log(AIgamestate)
                         if(AIgamestate[((i*7) + x) + 3] == turn){
                             console.log(((i*7) + x) + 3);
                             console.log("gamestate pos", AIgamestate[((i*7) + x) + 3])

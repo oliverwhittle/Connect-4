@@ -80,6 +80,7 @@ restartButton.addEventListener('click', () => {
     })
     if (playingAiGame == true){
         gameOver = false;
+        AIGameTurn = false;
         runAIGame();
     }else if (playingAiGame == false){
         socket.emit('reloadGame', socket.io.engine.id);

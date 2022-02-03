@@ -252,7 +252,7 @@ function updateBoard(gamestate, winningPositions){
     })
     if (gamestate.winner == "R" || gamestate.winner == "Y"){
         cellElement.forEach((cell, position) => {    
-            if (winningPositions.contains(position)) {
+            if (winningPositions.includes(position)) {
                 cell.classList.add(Glowing);
             } 
         })

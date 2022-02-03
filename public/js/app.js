@@ -587,6 +587,7 @@ function getRandomInt(max) {
  
 function checkWin(turn, AIgamestate){
     winner = ""
+    var winningPositions = [4];
     //vertical
     for(let i = 0; i < 3; i++){
         for(let x = 0; x < 7; x++){
@@ -595,6 +596,15 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i*7)+(x) + 14] == turn){
                         if(AIgamestate[(i*7)+(x) + 21] == turn){
                             winner = turn
+                            winningPositions[0] = (i*7)+(x);
+                            winningPositions[1] = (i*7)+(x) + 7;
+                            winningPositions[2] = (i*7)+(x) + 14;
+                            winningPositions[3] = (i*7)+(x) + 21;
+                            cellElement.forEach((cell, position) => {    
+                                if (winningPositions.includes(position)) {
+                                    cell.classList.add("Glowing");
+                                } 
+                            })
                         }
                     }
                 }
@@ -609,6 +619,15 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[((i*7) + x) + 2] == turn){
                         if(AIgamestate[((i*7) + x) + 3] == turn){
                             winner = turn
+                            winningPositions[0] = ((i*7) + x);
+                            winningPositions[1] = ((i*7) + x) + 1;
+                            winningPositions[2] = ((i*7) + x) + 2;
+                            winningPositions[3] = ((i*7) + x) + 3;
+                            cellElement.forEach((cell, position) => {    
+                                if (winningPositions.includes(position)) {
+                                    cell.classList.add("Glowing");
+                                } 
+                            })
                         }
                     }
                 }
@@ -623,6 +642,15 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i) + (((x + 2)*7) + 2)] == turn){
                         if(AIgamestate[(i) + (((x + 3)*7) + 3)] == turn){
                             winner = turn
+                            winningPositions[0] = (i) + (((x + 1)*7));
+                            winningPositions[1] = (i) + (((x + 1)*7) + 1);
+                            winningPositions[2] = (i) + (((x + 1)*7) + 2);
+                            winningPositions[3] = (i) + (((x + 1)*7) + 3);
+                            cellElement.forEach((cell, position) => {    
+                                if (winningPositions.includes(position)) {
+                                    cell.classList.add("Glowing");
+                                } 
+                            })
                         }
                     }
                 }
@@ -637,6 +665,15 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i) + (((x - 2)*7) + 2)] == turn){
                         if(AIgamestate[(i) + (((x - 3)*7) + 3)] == turn){
                             winner = turn
+                            winningPositions[0] = (i) + (x*7);
+                            winningPositions[1] = (i) + (((x - 1)*7) + 1);
+                            winningPositions[2] = (i) + (((x - 2)*7) + 2);
+                            winningPositions[3] = (i) + (((x - 3)*7) + 3);
+                            cellElement.forEach((cell, position) => {    
+                                if (winningPositions.includes(position)) {
+                                    cell.classList.add("Glowing");
+                                } 
+                            })
                         }
                     }
                 }

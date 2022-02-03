@@ -625,6 +625,7 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[((i*7) + x) + 2] == turn){
                         if(AIgamestate[((i*7) + x) + 3] == turn){
                             winner = turn
+                            console.log(turn);
                             winningPositions[0] = ((i*7) + x);
                             winningPositions[1] = ((i*7) + x) + 1;
                             winningPositions[2] = ((i*7) + x) + 2;

@@ -251,7 +251,7 @@ function updateBoard(gamestate, winningPositions){
             }
     })
     cellElement.forEach((cell, position) => {    
-        if (winningPositions.contains(position)) {
+        if (winningPositions[0] == position || winningPositions[1] == position || winningPositions[2] == position || winningPositions[3] == position) {
             cell.classList.add(Glowing);
         } 
     })

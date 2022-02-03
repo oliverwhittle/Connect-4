@@ -97,6 +97,9 @@ socket.on('gameReloaded', (data) => {
 })
 
 menuButton.addEventListener('click', () => {
+    cellElement.forEach((cell) => {    
+        cell.classList.remove("Glowing"); 
+    })
     if (viewingStats == true){
         viewingStats = false;
         menu();

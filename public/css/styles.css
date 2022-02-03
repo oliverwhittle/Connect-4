@@ -346,8 +346,7 @@ body{
   animation: drop;
 }
 
-.grid-item.Glowing::before,
-.grid-item.Glowing::after {
+.Glowing {
   box-shadow: 0px, 0px, 40px, 20px, #06d6a0;
 }
 

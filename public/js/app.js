@@ -46,6 +46,7 @@ var playingGame = false;
 var gameOver = false;
 var viewingStats = false;
 var AIGameTurn = false;
+let chosenPlace = false
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
@@ -479,7 +480,7 @@ function delay(AIgamestate) {
 
 function chooseAIplace(AIgamestate){
     let blankCell = " "
-    let chosenPlace = false
+    chosenPlace = false
     cellElement.forEach((cell, position) => {
         if(!chosenPlace && checkWin(R_class, AIgamestate) != R_class){
             if (AIgamestate[position] == R_class || AIgamestate[position] == Y_class){
@@ -602,15 +603,17 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i*7)+(x) + 14] == turn){
                         if(AIgamestate[(i*7)+(x) + 21] == turn){
                             winner = turn
-                            winningPositions[0] = (i*7)+(x);
-                            winningPositions[1] = (i*7)+(x) + 7;
-                            winningPositions[2] = (i*7)+(x) + 14;
-                            winningPositions[3] = (i*7)+(x) + 21;
-                            cellElement.forEach((cell, position) => {    
-                                if (winningPositions.includes(position)) {
-                                    cell.classList.add("Glowing");
-                                } 
-                            })
+                            if (chosenPlace == true){
+                                winningPositions[0] = (i*7)+(x);
+                                winningPositions[1] = (i*7)+(x) + 7;
+                                winningPositions[2] = (i*7)+(x) + 14;
+                                winningPositions[3] = (i*7)+(x) + 21;
+                                cellElement.forEach((cell, position) => {    
+                                    if (winningPositions.includes(position)) {
+                                        cell.classList.add("Glowing");
+                                    } 
+                                })
+                            }
                         }
                     }
                 }
@@ -625,15 +628,17 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[((i*7) + x) + 2] == turn){
                         if(AIgamestate[((i*7) + x) + 3] == turn){
                             winner = turn
-                            winningPositions[0] = ((i*7) + x);
-                            winningPositions[1] = ((i*7) + x) + 1;
-                            winningPositions[2] = ((i*7) + x) + 2;
-                            winningPositions[3] = ((i*7) + x) + 3;
-                            cellElement.forEach((cell, position) => {    
-                                if (winningPositions.includes(position)) {
-                                    cell.classList.add("Glowing");
-                                } 
-                            })
+                            if (chosenPlace == true){
+                                winningPositions[0] = ((i*7) + x);
+                                winningPositions[1] = ((i*7) + x) + 1;
+                                winningPositions[2] = ((i*7) + x) + 2;
+                                winningPositions[3] = ((i*7) + x) + 3;
+                                cellElement.forEach((cell, position) => {    
+                                    if (winningPositions.includes(position)) {
+                                        cell.classList.add("Glowing");
+                                    } 
+                                })
+                            }    
                         }
                     }
                 }
@@ -648,15 +653,17 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i) + (((x + 2)*7) + 2)] == turn){
                         if(AIgamestate[(i) + (((x + 3)*7) + 3)] == turn){
                             winner = turn
-                            winningPositions[0] = (i) + (((x + 1)*7));
-                            winningPositions[1] = (i) + (((x + 1)*7) + 1);
-                            winningPositions[2] = (i) + (((x + 1)*7) + 2);
-                            winningPositions[3] = (i) + (((x + 1)*7) + 3);
-                            cellElement.forEach((cell, position) => {    
-                                if (winningPositions.includes(position)) {
-                                    cell.classList.add("Glowing");
-                                } 
-                            })
+                            if (chosenPlace == true){
+                                winningPositions[0] = (i) + (((x + 1)*7));
+                                winningPositions[1] = (i) + (((x + 1)*7) + 1);
+                                winningPositions[2] = (i) + (((x + 1)*7) + 2);
+                                winningPositions[3] = (i) + (((x + 1)*7) + 3);
+                                cellElement.forEach((cell, position) => {    
+                                    if (winningPositions.includes(position)) {
+                                        cell.classList.add("Glowing");
+                                    } 
+                                })
+                            }
                         }
                     }
                 }
@@ -671,15 +678,17 @@ function checkWin(turn, AIgamestate){
                     if(AIgamestate[(i) + (((x - 2)*7) + 2)] == turn){
                         if(AIgamestate[(i) + (((x - 3)*7) + 3)] == turn){
                             winner = turn
-                            winningPositions[0] = (i) + (x*7);
-                            winningPositions[1] = (i) + (((x - 1)*7) + 1);
-                            winningPositions[2] = (i) + (((x - 2)*7) + 2);
-                            winningPositions[3] = (i) + (((x - 3)*7) + 3);
-                            cellElement.forEach((cell, position) => {    
-                                if (winningPositions.includes(position)) {
-                                    cell.classList.add("Glowing");
-                                } 
-                            })
+                            if (chosenPlace == true){
+                                winningPositions[0] = (i) + (x*7);
+                                winningPositions[1] = (i) + (((x - 1)*7) + 1);
+                                winningPositions[2] = (i) + (((x - 2)*7) + 2);
+                                winningPositions[3] = (i) + (((x - 3)*7) + 3);
+                                cellElement.forEach((cell, position) => {    
+                                    if (winningPositions.includes(position)) {
+                                        cell.classList.add("Glowing");
+                                    } 
+                                })
+                            }
                         }
                     }
                 }

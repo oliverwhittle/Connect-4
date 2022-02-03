@@ -234,12 +234,11 @@ function checkDraw(){
     })
 }
 
-socket.on('placed', (data) => {
-    updateBoard(data);
+socket.on('placed', (data, winningPositions) => {
+    updateBoard(data, winningPositions);
 });
 
-function updateBoard(gamestate){
-   
+function updateBoard(gamestate, winningPositions){
     rTurn = gamestate.turn;
     origionalTurn = gamestate.origional;
     cellElement.forEach((cell, position) => {
@@ -250,6 +249,11 @@ function updateBoard(gamestate){
             } else if (gamestate.board[position] == Y_class) {
                 cell.classList.add(Y_class);
             }
+    })
+    cellElement.forEach((cell, position) => {    
+        if (winningPositions.contains(position)) {
+            cell.classList.add(Glowing);
+        } 
     })
     if (gamestate.winner == "R" || gamestate.winner == "Y"){
         socket.emit('win', origionalTurn, socket.io.engine.id);  

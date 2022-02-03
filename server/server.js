@@ -132,6 +132,7 @@ io.on('connection', (socket) => {
     socket.on('placed', (data, gamestate) => { 
         var roomCode = getRoomCode(data.client)
         let found = false
+        var winningPositions = [4];
         for(let i = 0; i < 7; i++){
             if(found == false){
                 if((gamestate.board[data.cell + (i*7)] == "R") || (gamestate.board[data.cell + (i*7)] == "Y")){
@@ -158,6 +159,10 @@ io.on('connection', (socket) => {
                         if(gamestate.board[(i*7)+(x) + 14] == gamestate.turn){
                             if(gamestate.board[(i*7)+(x) + 21] == gamestate.turn){
                                 winner = gamestate.turn
+                                winningPositions[0] = (i*7)+(x);
+                                winningPositions[1] = (i*7)+(x) + 7;
+                                winningPositions[2] = (i*7)+(x) + 14;
+                                winningPositions[3] = (i*7)+(x) + 21;
                             }
                         }
                     }
@@ -172,6 +177,10 @@ io.on('connection', (socket) => {
                         if(gamestate.board[((i*7) + x) + 2] == gamestate.turn){
                             if(gamestate.board[((i*7) + x) + 3] == gamestate.turn){
                                 winner = gamestate.turn
+                                winningPositions[0] = ((i*7) + x);
+                                winningPositions[1] = ((i*7) + x) + 1;
+                                winningPositions[2] = ((i*7) + x) + 2;
+                                winningPositions[3] = ((i*7) + x) + 3;
                             }
                         }
                     }
@@ -186,6 +195,10 @@ io.on('connection', (socket) => {
                         if(gamestate.board[(i) + (((x + 2)*7) + 2)] == gamestate.turn){
                             if(gamestate.board[(i) + (((x + 3)*7) + 3)] == gamestate.turn){
                                 winner = gamestate.turn
+                                winningPositions[0] = (i) + (((x + 1)*7));
+                                winningPositions[1] = (i) + (((x + 1)*7) + 1);
+                                winningPositions[2] = (i) + (((x + 1)*7) + 2);
+                                winningPositions[3] = (i) + (((x + 1)*7) + 3);
                             }
                         }
                     }
@@ -200,6 +213,10 @@ io.on('connection', (socket) => {
                         if(gamestate.board[(i) + (((x - 2)*7) + 2)] == gamestate.turn){
                             if(gamestate.board[(i) + (((x - 3)*7) + 3)] == gamestate.turn){
                                 winner = gamestate.turn
+                                winningPositions[0] = (i) + (x*7);
+                                winningPositions[1] = (i) + (((x - 1)*7) + 1);
+                                winningPositions[2] = (i) + (((x - 2)*7) + 2);
+                                winningPositions[3] = (i) + (((x - 3)*7) + 3);
                             }
                         }
                     }
@@ -221,7 +238,7 @@ io.on('connection', (socket) => {
             gamestate.turn = "R"
         }
         gamestate.origional = origionalTurn
-    io.to(roomCode).emit('placed', gamestate);
+    io.to(roomCode).emit('placed', gamestate, winningPositions);
     })
 
     socket.on('updateGamestate', (gamestate, socketIdentifier) => {

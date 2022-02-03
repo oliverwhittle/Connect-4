@@ -346,6 +346,10 @@ body{
   animation: drop;
 }
 
+.Glowing{
+  box-shadow: 0px, 0px, 40px, 20px, #06d6a0;
+}
+
 /*------------------------------------------------------------------------------*/
 
 .mainMenu, .playerstatsPage, .gameScreen, .playercapFilled, .gameSettings{

@@ -91,7 +91,7 @@ body{
     font-size: 100px; 
     display: none;
     animation-name: grow;
-    animation-duration: 2s;
+    animation-duration: 4s;
 }
 
 .winningPlayer{

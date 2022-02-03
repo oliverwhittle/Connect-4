@@ -104,6 +104,7 @@ menuButton.addEventListener('click', () => {
         viewingStats = false;
         menu();
     }else if (playingAiGame == true){
+        gameOver = false;
         menu();
     }else if (playingGame == true){
         socket.emit('quitGame', socket.io.engine.id);
@@ -117,6 +118,7 @@ socket.on('gameLeft', (data) => {
     socket.emit('updateGamestate', gamestate, socket.io.engine.id)
     socket.emit('allplayersLeave', socket.io.engine.id);
     playingGame == false;
+    gameOver = false;
     menu();
 });
 

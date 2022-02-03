@@ -45,6 +45,7 @@ var playingAiGame = false;
 var playingGame = false;
 var gameOver = false;
 var viewingStats = false;
+var AIGameTurn = false;
 
 startButton.addEventListener('click', () => {
     playingAiGame = false;
@@ -411,7 +412,7 @@ function setAIHoverClass(){
 
 function rPlaced(e){
     const cell = e.target  
-    if(!(cell.classList.contains(R_class) || cell.classList.contains(Y_class)) && gameOver == false){
+    if(!(cell.classList.contains(R_class) || cell.classList.contains(Y_class)) && gameOver == false && AIGameTurn == false){
         placeRPiece(cell, R_class)
     } else {
     }
@@ -454,8 +455,9 @@ function placeRPiece(cell, R_class){
         }else if (checkDraw()){
             playerDraw()
         }else{
-            //delay(AIgamestate);
-            chooseAIplace(AIgamestate);
+            AIGameTurn = true;
+            delay(AIgamestate);
+            //chooseAIplace(AIgamestate);
         }
 }
 
@@ -571,7 +573,7 @@ function chooseAIplace(AIgamestate){
     }else if (checkDraw()){
         playerDraw()
     }else{
-        
+        AIGameTurn = false;
     }
 }
 

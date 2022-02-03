@@ -75,12 +75,11 @@ joingameButton.addEventListener('click', () => {
 });
 
 restartButton.addEventListener('click', () => {
-    cellElement.forEach((cell) => {    
-        cell.classList.remove("Glowing"); 
-    })
     if (playingAiGame == true){
+        cellElement.forEach((cell) => {    
+            cell.classList.remove("Glowing"); 
+        })
         gameOver = false;
-        AIGameTurn = false;
         runAIGame();
     }else if (playingAiGame == false){
         socket.emit('reloadGame', socket.io.engine.id);
@@ -88,6 +87,9 @@ restartButton.addEventListener('click', () => {
 });
 
 socket.on('gameReloaded', (data) => {
+    cellElement.forEach((cell) => {    
+        cell.classList.remove("Glowing"); 
+    })
     gameOver = false;
     gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
     socket.emit('updateGamestate', gamestate, socket.io.engine.id)
@@ -95,9 +97,6 @@ socket.on('gameReloaded', (data) => {
 })
 
 menuButton.addEventListener('click', () => {
-    cellElement.forEach((cell) => {    
-        cell.classList.remove("Glowing"); 
-    })
     if (viewingStats == true){
         viewingStats = false;
         menu();
@@ -404,6 +403,7 @@ function runAIGame(){
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
     playingAiGame = true;
+    AIGameTurn = false;
     AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
     
     cellElement.forEach((cell) => {
@@ -655,10 +655,10 @@ function checkWin(turn, AIgamestate){
                         if(AIgamestate[(i) + (((x + 3)*7) + 3)] == turn){
                             winner = turn
                             if (chosenPlace == true){
-                                winningPositions[0] = (i) + (((x + 1)*7));
+                                winningPositions[0] = (i) + (x*7);
                                 winningPositions[1] = (i) + (((x + 1)*7) + 1);
-                                winningPositions[2] = (i) + (((x + 1)*7) + 2);
-                                winningPositions[3] = (i) + (((x + 1)*7) + 3);
+                                winningPositions[2] = (i) + (((x + 2)*7) + 2);
+                                winningPositions[3] = (i) + (((x + 3)*7) + 3);
                                 cellElement.forEach((cell, position) => {    
                                     if (winningPositions.includes(position)) {
                                         cell.classList.add("Glowing");

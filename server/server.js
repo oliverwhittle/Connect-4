@@ -195,10 +195,10 @@ io.on('connection', (socket) => {
                         if(gamestate.board[(i) + (((x + 2)*7) + 2)] == gamestate.turn){
                             if(gamestate.board[(i) + (((x + 3)*7) + 3)] == gamestate.turn){
                                 winner = gamestate.turn
-                                winningPositions[0] = (i) + (((x + 1)*7));
+                                winningPositions[0] = (i) + (x*7);
                                 winningPositions[1] = (i) + (((x + 1)*7) + 1);
-                                winningPositions[2] = (i) + (((x + 1)*7) + 2);
-                                winningPositions[3] = (i) + (((x + 1)*7) + 3);
+                                winningPositions[2] = (i) + (((x + 2)*7) + 2);
+                                winningPositions[3] = (i) + (((x + 3)*7) + 3);
                             }
                         }
                     }

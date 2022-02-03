@@ -250,12 +250,12 @@ function updateBoard(gamestate, winningPositions){
                 cell.classList.add(Y_class);
             }
     })
-    cellElement.forEach((cell, position) => {    
-        if (winningPositions[0] == position || winningPositions[1] == position || winningPositions[2] == position || winningPositions[3] == position) {
-            cell.classList.add(Glowing);
-        } 
-    })
     if (gamestate.winner == "R" || gamestate.winner == "Y"){
+        cellElement.forEach((cell, position) => {    
+            if (winningPositions.contains(position)) {
+                cell.classList.add(Glowing);
+            } 
+        })
         socket.emit('win', origionalTurn, socket.io.engine.id);  
     } else if(!(gamestate.winner == "R" || gamestate.winner == "Y")){
         if(checkDraw()){

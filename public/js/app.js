@@ -454,8 +454,8 @@ function placeRPiece(cell, R_class){
         }else if (checkDraw()){
             playerDraw()
         }else{
-            delay(AIgamestate);
-            //chooseAIplace(AIgamestate);
+            //delay(AIgamestate);
+            chooseAIplace(AIgamestate);
         }
 }
 

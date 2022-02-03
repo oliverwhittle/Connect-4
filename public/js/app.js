@@ -447,7 +447,7 @@ function placeRPiece(cell, R_class){
                     }
                 }
             } else if(found == true){
-
+                chosenPlace == true;
             }
         } 
         cellElement.forEach((cell, position) => {

@@ -114,6 +114,9 @@ menuButton.addEventListener('click', () => {
 });
 
 socket.on('gameLeft', (data) => {
+    cellElement.forEach((cell, position) => {    
+        cell.classList.remove("Glowing"); 
+    })
     gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
     socket.emit('updateGamestate', gamestate, socket.io.engine.id)
     socket.emit('allplayersLeave', socket.io.engine.id);

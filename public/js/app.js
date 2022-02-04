@@ -104,6 +104,7 @@ menuButton.addEventListener('click', () => {
         viewingStats = false;
         menu();
     }else if (playingAiGame == true){
+        AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
         gameOver = false;
         menu();
     }else if (playingGame == true){

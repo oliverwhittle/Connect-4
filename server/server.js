@@ -4,7 +4,6 @@ const express = require('express');
 const socketIO = require('socket.io');
 
 const fs = require('fs');
-const { Socket } = require('net');
 const file = "public/textfiles/stats.txt"
 const publicPath    = path.join(__dirname, '/../public');
 const port = process.env.PORT || 3000;

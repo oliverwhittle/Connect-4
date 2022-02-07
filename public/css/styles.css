@@ -290,6 +290,21 @@ body{
 
 /*------------------------------------------------------------------------------*/
 
+.roomcodeLable{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease all;
+    background: #F0F8FF;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    height: 90px;
+    font-size: 60px;
+}
+
 .gridContainer{
     background:#06d6a0;
     padding: 50px;

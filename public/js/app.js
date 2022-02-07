@@ -25,6 +25,7 @@ const userName = document.querySelector('.userName');
 const winningPlayer = document.querySelector('.winningPlayer');
 const playerstatsName = document.querySelector('.playerstatsName');
 const playerstatsWins = document.querySelector('.playerstatsWins');
+const roomcodeLable = document.querySelector('.roomcodeLable');
 
 const R_class = 'R'
 const Y_class = 'Y'
@@ -64,6 +65,7 @@ creategameButton.addEventListener('click', () => {
 
 joingameButton.addEventListener('click', () => {
     console.log(joinCode.value)
+    roomcodeLable.textContent = joinCode.value;
     var pattern = /^[0-9,a-z]{6}$/
     if (joinCode.value.length > 0 && pattern.test(joinCode.value)){
         console.log("Hi")

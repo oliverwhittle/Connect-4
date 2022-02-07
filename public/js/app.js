@@ -176,6 +176,7 @@ socket.on('startGame', (data, clientsinRoom) => {
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
+    console.log("Clients in room", clientsinRoom)
     if (clientsinRoom == 2){
         socket.emit('associateTurn', socket.io.engine.id) 
     }

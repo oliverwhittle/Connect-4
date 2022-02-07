@@ -123,7 +123,7 @@ io.on('connection', (socket) => {
                 clientsInRoom[0].colour = "Y"
             }
         } else if(clientsInRoom.length == 1){
-            clientsInRoom[0].colour = "R"
+            //clientsInRoom[0].colour = "R"
         } else{
             
         }  

@@ -115,7 +115,7 @@ io.on('connection', (socket) => {
         if (clientsInRoom.length == 2){
             if (clientsInRoom[0].colour == "R"){
                 clientsInRoom[1].colour = "Y"
-            }else if (clientsInRoom[1] == "R"){
+            }else if (clientsInRoom[1].colour == "R"){
                 clientsInRoom[0].colour = "Y"
             } else if(clientsInRoom[0].colour != "R" || clientsInRoom[1].colour != "R" || clientsInRoom[0].colour != "Y" || clientsInRoom[1].colour != "Y"){
                 var num = getRnd(0,1)

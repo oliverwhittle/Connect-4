@@ -251,6 +251,10 @@ io.on('connection', (socket) => {
                 clientsInRoom.push(clients[i])
             }
         }
+        console.log("data.client", data.client)
+        console.log("clientsInRoom[0].socketID", clientsInRoom[0].socketID)
+        console.log("clientsInRoom[1].socketID", clientsInRoom[1].socketID)
+        console.log("gamestate.turn", gamestate.turn)
         if(data.client == clientsInRoom[0].socketID && gamestate.turn == "R"){
             origionalTurn = gamestate.turn
             gamestate.turn = "Y"

@@ -134,7 +134,16 @@ io.on('connection', (socket) => {
             clientsInRoom[0].colour = "null"
         } else{
             
-        }  
+        } 
+        
+        for (var i = 0; i < clients.length; i++){
+            if (clients[i].socketID == clientsInRoom[0].socketID){
+                clients[i].colour = clientsInRoom[0].colour
+            }else if (clients[i].socketID == clientsInRoom[1].socketID){
+                clients[i].colour = clientsInRoom[1].colour
+            }
+        }
+
         if(data == clientsInRoom[0].socketID){
             assignedTurn = clientsInRoom[0].colour
         } else if (data == clientsInRoom[1].socketID) {

@@ -197,6 +197,8 @@ function startGame() {
 function handleClick(e){
     const cell = e.target
     console.log("cell clicked")
+    console.log("rTurn", rTurn)
+    console.log("gameOver", gameOver)
     if(clientTurn == rTurn && gameOver == false){
         placePiece(cell, rTurn)
     } else {

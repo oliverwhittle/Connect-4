@@ -291,21 +291,21 @@ body{
 /*------------------------------------------------------------------------------*/
 
 .roomCode{
-  justify-content: center;
-}
-
-.roomcodeLable{
+    justify-content: center;
     position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.1s ease all;
     background: #F0F8FF;
-    color: black;
     border: none;
     border-radius: 25px;
     width: 300px;
     height: 90px;
+}
+
+.roomcodeLable{
+  color: black;
     font-size: 60px;
     text-align: center;
 }

@@ -131,13 +131,14 @@ io.on('connection', (socket) => {
         } else{
             
         }  
-        if(data == clientsInRoom[0].socketID){
-            assignedTurn = clientsInRoom[0].colour
-        } else if (data == clientsInRoom[1].socketID) {
-            assignedTurn = clientsInRoom[1].colour
-        }
-        console.log("Assigned", assignedTurn)
-    io.to(socket.id).emit("assigned", assignedTurn)
+        //if(data == clientsInRoom[0].socketID){
+        //    assignedTurn = clientsInRoom[0].colour
+        //} else if (data == clientsInRoom[1].socketID) {
+        //    assignedTurn = clientsInRoom[1].colour
+        //}
+        //console.log("Assigned", assignedTurn)
+    io.to(clientsInRoom[0].socketID).emit("assigned", clientsInRoom[0].colour)
+    io.to(clientsInRoom[1].socketID).emit("assigned", clientsInRoom[1].colour)
     })
 
     socket.on('placed', (data, gamestate) => { 

@@ -293,7 +293,7 @@ body{
 .roomCode{
     justify-content: center;
     position: fixed;
-    top: 10%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.1s ease all;
@@ -302,10 +302,11 @@ body{
     border-radius: 25px;
     width: 300px;
     height: 90px;
+    display: none;
 }
 
 .roomcodeLable{
-  color: black;
+    color: black;
     font-size: 60px;
     text-align: center;
 }

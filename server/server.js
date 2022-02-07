@@ -115,6 +115,7 @@ io.on('connection', (socket) => {
         if (clientsInRoom.length == 2){
             var num = getRnd(0,1)
             console.log("num", num)
+            console.log("clients in room", clientsInRoom.length)
             if (num == 0){
                 clientsInRoom[0].colour = "R"
                 clientsInRoom[1].colour = "Y"

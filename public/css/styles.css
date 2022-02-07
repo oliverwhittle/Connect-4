@@ -290,6 +290,10 @@ body{
 
 /*------------------------------------------------------------------------------*/
 
+.roomCode{
+  justify-content: center;
+}
+
 .roomcodeLable{
     position: fixed;
     top: 10%;

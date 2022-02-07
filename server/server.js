@@ -113,8 +113,14 @@ io.on('connection', (socket) => {
             }
         }
         if (clientsInRoom.length == 2){
-            clientsInRoom[0].colour = "R"
-            clientsInRoom[1].colour = "Y"
+            var num = getRnd(0,1)
+            if (num == 0){
+                clientsInRoom[0].colour = "R"
+                clientsInRoom[1].colour = "Y"
+            } else if(num == 1){
+                clientsInRoom[1].colour = "R"
+                clientsInRoom[0].colour = "Y"
+            }
         } else if(clientsInRoom.length == 1){
             clientsInRoom[0].colour = "R"
         } else{
@@ -293,5 +299,9 @@ io.on('connection', (socket) => {
             }
         }
         return -1
+    }
+
+    function getRnd(min, max){
+        return Math.floor(Math.random() * (max - min + 1) + min)
     }
 });

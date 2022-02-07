@@ -114,7 +114,7 @@ io.on('connection', (socket) => {
         console.log("Clients in room befor", clientsInRoom)
         if (clientsInRoom.length == 2){
             clientsInRoom[0].colour == "R"
-            clientsInRoom[1].colour = "Y"
+            clientsInRoom[1].colour == "Y"
         }
         console.log("Clients in room after", clientsInRoom)
 

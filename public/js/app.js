@@ -166,9 +166,19 @@ socket.on('disconecting', (data) => {
     playerCount = data
 });
 
-socket.on('startGame', (data) => {
+socket.on('startGame', (data, clientsinRoom) => {
     updateBoard(data);
-    socket.emit('associateTurn', socket.io.engine.id) 
+    mainMenu.style.display = "none"
+    playerLogin.style.display = "none";
+    playerstatsPage.style.display = "none";
+    gameScreen.style.display = "block";
+    menuButton.style.display = "block";
+    restartButton.style.display = "block";
+    gameSettings.style.display = "none";
+    winningPlayer.style.display = "none";
+    if (clientsinRoom == 2){
+        socket.emit('associateTurn', socket.io.engine.id) 
+    }
 });
 
 socket.on('assigned', (data) => {
@@ -178,14 +188,6 @@ socket.on('assigned', (data) => {
 });
 
 function startGame() { 
-    mainMenu.style.display = "none"
-    playerLogin.style.display = "none";
-    playerstatsPage.style.display = "none";
-    gameScreen.style.display = "block";
-    menuButton.style.display = "block";
-    restartButton.style.display = "block";
-    gameSettings.style.display = "none";
-    winningPlayer.style.display = "none";
     row.forEach(cell => {
     cell.addEventListener('click', handleClick, {once: false})
     })

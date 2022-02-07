@@ -78,7 +78,7 @@ io.on('connection', (socket) => {
         console.log("Clients list", clients)
         total = io.engine.clientsCount
         
-        io.to(socketIdentifier).emit('startGame', gamestate);
+        io.to(roomCode).emit('startGame', gamestate, clientsInRoom.length);
     })
 
     socket.on('reloadGame', (socketIdentifier) => {
@@ -130,8 +130,13 @@ io.on('connection', (socket) => {
         } else{
             
         }  
-    io.to(clientsInRoom[0].socketID).emit("assigned", clientsInRoom[0].colour)
-    io.to(clientsInRoom[1].socketID).emit("assigned", clientsInRoom[1].colour)
+        if(data == clientsInRoom[0].socketID){
+            assignedTurn = clientsInRoom[0].colour
+        } else if (data == clientsInRoom[1].socketID) {
+            assignedTurn = clientsInRoom[1].colour
+        }
+        console.log("Assigned", assignedTurn)
+    io.to(socket.id).emit("assigned", assignedTurn)
     })
 
     socket.on('placed', (data, gamestate) => { 

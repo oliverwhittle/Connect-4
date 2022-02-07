@@ -111,6 +111,7 @@ io.on('connection', (socket) => {
                 clientsInRoom.push(clients[i])
             }
         }
+        console.log("Clients in room", clientsInRoom)
         if (clientsInRoom.length == 2){
             var num = getRnd(0,1)
             var coloursChosen = false

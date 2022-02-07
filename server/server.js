@@ -141,6 +141,12 @@ io.on('connection', (socket) => {
             }
         }
 
+        console.log("data", data)
+        console.log("clientsInRoom[0].socketID", clientsInRoom[0].socketID)
+        console.log("clientsInRoom[0].colour", clientsInRoom[0].colour)
+        console.log("clientsInRoom[1].socketID", clientsInRoom[1].socketID)
+        console.log("clientsInRoom[1].colour", clientsInRoom[1].colour)
+
         if(data == clientsInRoom[0].socketID){
             assignedTurn = clientsInRoom[0].colour
         } else if (data == clientsInRoom[1].socketID) {

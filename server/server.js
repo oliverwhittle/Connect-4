@@ -138,7 +138,7 @@ io.on('connection', (socket) => {
             assignedTurn = clientsInRoom[1].colour
         }
         //console.log("Assigned", assignedTurn)
-    io.to(data).emit("assigned", assignedTurn)
+    io.to(socket.id).emit("assigned", assignedTurn)
     })
 
     socket.on('placed', (data, gamestate) => { 

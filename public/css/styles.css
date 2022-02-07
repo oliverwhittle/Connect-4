@@ -290,7 +290,7 @@ body{
 
 /*------------------------------------------------------------------------------*/
 
-.roomCode{
+.roomCodeContainer{
     justify-content: center;
     position: fixed;
     top: 90%;

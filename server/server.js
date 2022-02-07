@@ -111,7 +111,7 @@ io.on('connection', (socket) => {
                 clientsInRoom.push(clients[i])
             }
         }
-        console.log("Clients in room", clientsInRoom)
+        console.log("Clients in room befor", clientsInRoom)
         if (clientsInRoom.length == 2){
             if (clientsInRoom[0].colour == "R"){
                 clientsInRoom[1].colour = "Y"
@@ -132,6 +132,8 @@ io.on('connection', (socket) => {
             }
         }
         
+        console.log("Clients in room after", clientsInRoom)
+
         for (var i = 0; i < clients.length; i++){
             if (clients[i].socketID == clientsInRoom[0].socketID){
                 clients[i].colour = clientsInRoom[0].colour

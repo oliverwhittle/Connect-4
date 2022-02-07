@@ -126,7 +126,7 @@ io.on('connection', (socket) => {
                 coloursChosen = true 
             }
         } else if(clientsInRoom.length == 1){
-            
+            clientsInRoom[0].colour = "null"
         } else{
             
         }  

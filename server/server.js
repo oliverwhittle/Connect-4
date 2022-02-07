@@ -114,14 +114,17 @@ io.on('connection', (socket) => {
         }
         if (clientsInRoom.length == 2){
             var num = getRnd(0,1)
+            var coloursChosen = false
             console.log("num", num)
             console.log("clients in room", clientsInRoom.length)
-            if (num == 0){
+            if (num == 0 && coloursChosen == false){
                 clientsInRoom[0].colour = "R"
                 clientsInRoom[1].colour = "Y"
-            } else if(num == 1){
+                coloursChosen = true
+            } else if(num == 1 && coloursChosen == false){
                 clientsInRoom[1].colour = "R"
                 clientsInRoom[0].colour = "Y"
+                coloursChosen = true 
             }
         } else if(clientsInRoom.length == 1){
             //clientsInRoom[0].colour = "R"

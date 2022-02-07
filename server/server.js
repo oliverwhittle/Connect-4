@@ -130,11 +130,7 @@ io.on('connection', (socket) => {
                     coloursChosen = true 
                 }
             }
-        } else if(clientsInRoom.length == 1){
-            clientsInRoom[0].colour = "null"
-        } else{
-            
-        } 
+        }
         
         for (var i = 0; i < clients.length; i++){
             if (clients[i].socketID == clientsInRoom[0].socketID){
@@ -149,7 +145,7 @@ io.on('connection', (socket) => {
         } else if (data == clientsInRoom[1].socketID) {
             assignedTurn = clientsInRoom[1].colour
         }
-        console.log("Assigned", assignedTurn)
+        //console.log("Assigned", assignedTurn)
     io.to(socket.id).emit("assigned", assignedTurn)
     })
 

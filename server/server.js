@@ -131,7 +131,6 @@ io.on('connection', (socket) => {
                 }
             }
         }
-        
         console.log("Clients in room after", clientsInRoom)
 
         for (var i = 0; i < clients.length; i++){

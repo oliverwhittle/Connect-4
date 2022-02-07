@@ -292,6 +292,8 @@ body{
 
 .roomCodeContainer{
     justify-content: center;
+    align-items: center;
+    position: relative;
     position: fixed;
     top: 90%;
     left: 50%;

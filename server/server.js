@@ -39,9 +39,9 @@ io.on('connection', (socket) => {
         console.log('A user has disconnected.');
         var total = io.engine.clientsCount
         io.emit('disconecting', total)
-        for( var i=0, len=clients.length; i<len; ++i ){
+        for(var i=0, len=clients.length; i<len; ++i){
             var clientSocket = clients[i].socketID;
-            if(clientSocket == socket){
+            if(clientSocket == socket.id){
                 clients.splice(i);
                 break;
             }

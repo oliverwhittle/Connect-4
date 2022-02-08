@@ -33,14 +33,15 @@ io.on('connection', (socket) => {
         clients.push(data);
     io.to(socket.id).emit('menu');
     })
+
 //this needs to be fixed
     socket.on('disconnect', (socket) => {
         console.log('A user has disconnected.');
         var total = io.engine.clientsCount
         io.emit('disconecting', total)
         for( var i=0, len=clients.length; i<len; ++i ){
-            var c = clients[i].socketID;
-            if(c == socket.id){
+            var clientSocket = clients[i].socketID;
+            if(clientSocket == socket){
                 clients.splice(i);
                 break;
             }

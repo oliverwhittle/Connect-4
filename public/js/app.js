@@ -99,10 +99,7 @@ socket.on('gameReloaded', (data) => {
         }
     })
 
-
-
-
-
+    //this needs fixing
 
     //gameOver = false;
     //gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};

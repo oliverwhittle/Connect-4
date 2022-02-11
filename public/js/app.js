@@ -722,22 +722,16 @@ function checkWin(turn, AIgamestate){
 
 //--------------------------------------------------------------------------------------------------------------------------//
 
-// Song titles
 const songs = ['The Whole Other - 8-Bit Dreamscape ♫', 'Vibe Mountain - Operatic 3 ♫'];
-
-// Keep track of song
 let songIndex = 0;
 
-// Initially load song details into DOM
 loadSong(songs[songIndex]);
 
-// Update song details
 function loadSong(song) {
   var filePath = song
   audio.src = "Audio/" + filePath + ".mp3";
 }
 
-// Play song
 function playSong() {
   settingsMenu.classList.add('play');
   playPause.classList.remove('play');
@@ -746,7 +740,6 @@ function playSong() {
   audio.play();
 }
 
-// Pause song
 function pauseSong() {
   settingsMenu.classList.remove('play');
   playPause.classList.remove('pause');
@@ -755,7 +748,6 @@ function pauseSong() {
   audio.pause();
 }
 
-// Previous song
 function prevSong() {
   songIndex--;
 
@@ -768,7 +760,6 @@ function prevSong() {
   playSong();
 }
 
-// Next song
 function nextSong() {
   songIndex++;
 
@@ -781,7 +772,6 @@ function nextSong() {
   playSong();
 }
 
-// Event listeners
 playPause.addEventListener('click', () => {
     const isPlaying = settingsMenu.classList.contains('play');
   
@@ -792,9 +782,7 @@ playPause.addEventListener('click', () => {
     }
   });
   
-  // Change song
   skipBack.addEventListener('click', prevSong);
   skipForward.addEventListener('click', nextSong);
   
-  // Song ends
   audio.addEventListener('ended', nextSong);

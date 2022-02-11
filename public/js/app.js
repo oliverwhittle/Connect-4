@@ -566,7 +566,6 @@ function chooseAIplace(AIgamestate){
                     do{
                         let randomPos = getRandomInt(42)
                         if (AIgamestate[randomPos] == blankCell) {
-
                             if(randomPos >=35){    
                                 cellElement.forEach((cell, pos) => {
                                     if (pos == randomPos){

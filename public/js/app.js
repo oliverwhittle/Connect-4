@@ -17,6 +17,12 @@ const playerLogin = document.querySelector('.playerLogin');
 const playerstatsPage = document.querySelector('.playerstatsPage');
 const gameSettings = document.querySelector('.gameSettings');
 
+//<-----------AUDIO---------->//
+const skipForward = document.querySelector('.btn-sForward')
+const skipBack = document.querySelector('.btn-sBack')
+const playPause = document.querySelector('.btn-playPause');
+const settingsMenu = document.querySelector('.settingsMenu');
+
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
 const joinCode = document.querySelector('.joinCode')
@@ -714,3 +720,61 @@ function checkWin(turn, AIgamestate){
 }
 
 //--------------------------------------------------------------------------------------------------------------------------//
+
+// Song titles
+const songs = ['The Whole Other - 8-Bit Dreamscape ♫', 'Vibe Mountain - Operatic 3 ♫'];
+
+// Keep track of song
+let songIndex = 0;
+
+// Initially load song details into DOM
+loadSong(songs[songIndex]);
+
+// Update song details
+function loadSong(song) {
+  audio.src = "Audio/${song}.mp3";
+}
+
+// Play song
+function playSong() {
+  settingsMenu.classList.add('play');
+  btn-playPause.classList.remove('play');
+  btn-playPause.classList.add('pause');
+
+  audio.play();
+}
+
+// Pause song
+function pauseSong() {
+  musicContainer.classList.remove('play');
+  btn-playPause.classList.remove('pause');
+  btn-playPause.classList.add('play');
+
+  audio.pause();
+}
+
+// Previous song
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Next song
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}

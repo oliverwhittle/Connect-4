@@ -733,7 +733,8 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
-  audio.src = "Audio/${song}.mp3";
+  var filePath = song
+  audio.src = "Audio/" + filePath + ".mp3";
 }
 
 // Play song

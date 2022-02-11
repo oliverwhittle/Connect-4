@@ -488,7 +488,6 @@ function placeRPiece(cell, R_class){
         }else{
             AIGameTurn = true;
             delayAIPiece(AIgamestate);
-            //chooseAIplace(AIgamestate);
         }
 }
 

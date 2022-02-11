@@ -715,6 +715,8 @@ function checkWin(turn, AIgamestate){
 
 //--------------------------------------------------------------------------------------------------------------------------//
 
+audioControls();
+
 function audioControls(){
     var playlist = [
         "The Whole Other - 8-Bit Dreamscape ♫.mp3",

@@ -93,10 +93,21 @@ socket.on('gameReloaded', (data) => {
     cellElement.forEach((cell) => {    
         cell.classList.remove("Glowing"); 
     })
-    gameOver = false;
-    gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
-    socket.emit('updateGamestate', gamestate, socket.io.engine.id)
-    socket.emit('gameRestart', socket.io.engine.id, gamestate);
+    cellElement.forEach((cell, position) => {
+        if (gamestate.board[position] == R_class || gamestate.board[position] == Y_class) {
+            cell.classList.add("Falling");
+        }
+    })
+
+
+
+
+
+
+    //gameOver = false;
+    //gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
+    //socket.emit('updateGamestate', gamestate, socket.io.engine.id)
+    //socket.emit('gameRestart', socket.io.engine.id, gamestate);
 })
 
 menuButton.addEventListener('click', () => {
@@ -487,16 +498,16 @@ function placeRPiece(cell, R_class){
             playerDraw()
         }else{
             AIGameTurn = true;
-            delay(AIgamestate);
+            delayAIPiece(AIgamestate);
             //chooseAIplace(AIgamestate);
         }
 }
 
-function delay(AIgamestate) {
+function delayAIPiece(AIgamestate) {
     setTimeout(function() {
         chooseAIplace(AIgamestate);
     }, 1000);
-  }
+}
 
 function chooseAIplace(AIgamestate){
     let blankCell = " "

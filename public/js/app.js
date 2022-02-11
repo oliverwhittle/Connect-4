@@ -22,6 +22,7 @@ const skipForward = document.querySelector('.btn-sForward')
 const skipBack = document.querySelector('.btn-sBack')
 const playPause = document.querySelector('.btn-playPause');
 const settingsMenu = document.querySelector('.settingsMenu');
+const audio = document.querySelector('.audio');
 
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')

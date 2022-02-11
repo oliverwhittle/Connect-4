@@ -748,7 +748,7 @@ function playSong() {
 
 // Pause song
 function pauseSong() {
-  musicContainer.classList.remove('play');
+  settingsMenu.classList.remove('play');
   playPause.classList.remove('pause');
   playPause.classList.add('play');
 

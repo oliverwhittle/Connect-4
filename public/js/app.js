@@ -26,6 +26,7 @@ const winningPlayer = document.querySelector('.winningPlayer');
 const playerstatsName = document.querySelector('.playerstatsName');
 const playerstatsWins = document.querySelector('.playerstatsWins');
 const roomcodeLable = document.querySelector('.roomcodeLable');
+const roomcodelableContainer = document.querySelector('.roomcodeContainer')
 
 const R_class = 'R'
 const Y_class = 'Y'
@@ -419,6 +420,7 @@ function runAIGame(){
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
     roomcodeLable.style.display = "none";
+    roomcodelableContainer.style.display = "none";
     playingAiGame = true;
     AIGameTurn = false;
     AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];

@@ -712,3 +712,32 @@ function checkWin(turn, AIgamestate){
     }
     return winner
 }
+
+//--------------------------------------------------------------------------------------------------------------------------//
+
+function audioControls(){
+    var playlist = [
+        "The Whole Other - 8-Bit Dreamscape ♫.mp3",
+        "Vibe Mountain - Operatic 3 ♫.mp3"
+        // add more music here if necessary
+    ];
+
+    var currentSong = 0;
+    var musicPlayer = document.querySelector("settingsMenu audio");
+
+    if (musicPlayer === null) {
+        throw "Playlist Player does not exists ...";
+    } else {
+        musicPlayer.src = playlist[currentSong];
+        musicPlayer.addEventListener('ended', next, false)
+    }
+}
+
+function next() {
+    if (currentSong === playlist.length - 1) {
+        currentSong = 0;
+    } else {
+        currentSong++;
+    }
+    musicPlayer.src = playlist[currentSong];
+}

@@ -26,7 +26,7 @@ const winningPlayer = document.querySelector('.winningPlayer');
 const playerstatsName = document.querySelector('.playerstatsName');
 const playerstatsWins = document.querySelector('.playerstatsWins');
 const roomcodeLable = document.querySelector('.roomcodeLable');
-const roomcodelableContainer = document.querySelector('.roomcodeContainer')
+const roomcodelableContainer = document.querySelector('.roomCodeContainer')
 
 const R_class = 'R'
 const Y_class = 'Y'

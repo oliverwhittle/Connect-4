@@ -395,7 +395,7 @@ body{
 
 @keyframes fall-animation {
   from   {transform: translateY(0px);}
-  to {transform: translateY(1000px);}
+  to {transform: translateY(1400px);}
 }
 
 /*------------------------------------------------------------------------------*/

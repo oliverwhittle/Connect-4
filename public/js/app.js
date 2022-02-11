@@ -740,8 +740,8 @@ function loadSong(song) {
 // Play song
 function playSong() {
   settingsMenu.classList.add('play');
-  btn-playPause.classList.remove('play');
-  btn-playPause.classList.add('pause');
+  playPause.classList.remove('play');
+  playPause.classList.add('pause');
 
   audio.play();
 }
@@ -749,8 +749,8 @@ function playSong() {
 // Pause song
 function pauseSong() {
   musicContainer.classList.remove('play');
-  btn-playPause.classList.remove('pause');
-  btn-playPause.classList.add('play');
+  playPause.classList.remove('pause');
+  playPause.classList.add('play');
 
   audio.pause();
 }
@@ -780,3 +780,21 @@ function nextSong() {
 
   playSong();
 }
+
+// Event listeners
+playPause.addEventListener('click', () => {
+    const isPlaying = settingsMenu.classList.contains('play');
+  
+    if (isPlaying) {
+      pauseSong();
+    } else {
+      playSong();
+    }
+  });
+  
+  // Change song
+  skipBack.addEventListener('click', prevSong);
+  skipForward.addEventListener('click', nextSong);
+  
+  // Song ends
+  audio.addEventListener('ended', nextSong);

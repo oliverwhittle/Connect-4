@@ -65,11 +65,10 @@ creategameButton.addEventListener('click', () => {
 });
 
 joingameButton.addEventListener('click', () => {
-    console.log(joinCode.value)
+    console.log("Room code", joinCode.value)
     roomcodeLable.textContent = joinCode.value;
     var pattern = /^[0-9,a-z]{6}$/
     if (joinCode.value.length > 0 && pattern.test(joinCode.value)){
-        console.log("Hi")
         gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
         playingGame = true;
         gameOver = false;
@@ -185,7 +184,7 @@ socket.on('startGame', (data, clientsinRoom) => {
 
 socket.on('assigned', (data) => {
     clientTurn = data
-    console.log("this is the client turn", clientTurn)
+    console.log("This is the client turn", clientTurn)
     startGame();  
 });
 
@@ -198,9 +197,7 @@ function startGame() {
 
 function handleClick(e){
     const cell = e.target
-    console.log("cell clicked")
-    console.log("rTurn", rTurn)
-    console.log("gameOver", gameOver)
+    console.log("Cell clicked")
     if(clientTurn == rTurn && gameOver == false){
         placePiece(cell, rTurn)
     } else {

@@ -418,6 +418,7 @@ function runAIGame(){
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
+    roomcodeLable.style.display = "none";
     playingAiGame = true;
     AIGameTurn = false;
     AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];

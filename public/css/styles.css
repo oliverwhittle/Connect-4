@@ -394,11 +394,8 @@ body{
 }
 
 @keyframes fall-animation {
-  0%   {transform: translateY(0px);}
-  25%  {transform: translateY(250px);}
-  50%  {transform: translateY(500px);}
-  75%  {transform: translateY(750px);}
-  100% {transform: translateY(1000px);}
+  from   {transform: translateY(0px);}
+  to {transform: translateY(1000px);}
 }
 
 /*------------------------------------------------------------------------------*/

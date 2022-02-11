@@ -93,18 +93,10 @@ socket.on('gameReloaded', (data) => {
     cellElement.forEach((cell) => {    
         cell.classList.remove("Glowing"); 
     })
-    cellElement.forEach((cell, position) => {
-        if (gamestate.board[position] == R_class || gamestate.board[position] == Y_class) {
-            cell.classList.add("Falling");
-        }
-    })
-
-    //this needs fixing
-
-    //gameOver = false;
-    //gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
-    //socket.emit('updateGamestate', gamestate, socket.io.engine.id)
-    //socket.emit('gameRestart', socket.io.engine.id, gamestate);
+    gameOver = false;
+    gamestate = {board: [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], turn: "R", origional: "Y", winner: ""};
+    socket.emit('updateGamestate', gamestate, socket.io.engine.id)
+    socket.emit('gameRestart', socket.io.engine.id, gamestate);
 })
 
 menuButton.addEventListener('click', () => {

@@ -388,16 +388,6 @@ body{
   box-shadow: 0px 0px 20px 10px #FFFFFF;
 }
 
-.Falling{
-  animation-name: fall-animation;
-  animation-duration: 4s;
-}
-
-@keyframes fall-animation {
-  from   {transform: translateY(0px);}
-  to {transform: translateY(1400px);}
-}
-
 /*------------------------------------------------------------------------------*/
 
 .mainMenu, .playerstatsPage, .gameScreen, .playercapFilled, .gameSettings{

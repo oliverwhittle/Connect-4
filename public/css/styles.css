@@ -495,7 +495,7 @@ body{
 
 /*------------------------------------------------------------------------------*/
 
-.sForward, .sBack, .playPause {
+.btn-sForward, .btn-sBack, .btn-playPause {
   background-color: #fff;
   border: 0px;
   color: #dfdbdf;

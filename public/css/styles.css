@@ -506,13 +506,12 @@ body{
 }
 
 .audiocontrolsContainer{
-  outline: 15px solid #2a0f8b;
   background-color: #3d0dec;
-  border-radius: 25px;
   justify-content: center;
   top: 45%;
   left: 15%;
   height: 600px;
+  width: 0px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;

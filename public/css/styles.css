@@ -512,5 +512,7 @@ body{
   justify-content: center;
   top: 35%;
   left: 0%;
+  height: 200px;
+  position: fixed;
   transform: translate(-50%, -50%);
 }

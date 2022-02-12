@@ -24,7 +24,7 @@ const playPause = document.querySelector('.btn-playPause');
 const settingsMenu = document.querySelector('.settingsMenu');
 const audio = document.querySelector('.audio');
 const hamburgerCB = document.querySelector('.hamburgerCheckbox');
-const hamburger = document.querySelector('.hamburger');
+const audiocontrolsContainer = document.querySelector('.audiocontrolsContainer');
 
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
@@ -790,10 +790,10 @@ playPause.addEventListener('click', () => {
 
 hamburgerCB.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
-        hamburger.classList.remove('close')
-        hamburger.classList.add('open')
+        audiocontrolsContainer.classList.remove('close')
+        audiocontrolsContainer.classList.add('open')
     } else {
-        hamburger.classList.remove('open')
-        hamburger.classList.add('close')
+        audiocontrolsContainer.classList.remove('open')
+        audiocontrolsContainer.classList.add('close')
     }
 })

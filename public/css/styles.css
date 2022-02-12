@@ -88,8 +88,6 @@ body{
     left: 50%;
     top: 15%;
     display: none;
-    animation-name: grow;
-    animation-duration: 4s;
 }
 
 .winningPlayer{

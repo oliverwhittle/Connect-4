@@ -504,3 +504,10 @@ body{
   padding: 10px;
   margin: 0 20px;
 }
+
+.settingsContainer{
+  background-color: #3d0dec;
+  justify-content: center;
+  top: 35%;
+  left: 0%
+}

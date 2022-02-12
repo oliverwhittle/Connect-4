@@ -23,6 +23,8 @@ const skipBack = document.querySelector('.btn-sBack')
 const playPause = document.querySelector('.btn-playPause');
 const settingsMenu = document.querySelector('.settingsMenu');
 const audio = document.querySelector('.audio');
+const hamburgerCB = document.querySelector('.hamburgerCheckbox');
+const hamburger = document.querySelector('.hamburger');
 
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
@@ -785,3 +787,13 @@ playPause.addEventListener('click', () => {
     skipForward.addEventListener('click', nextSong);
   
     audio.addEventListener('ended', nextSong);
+
+hamburgerCB.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        hamburger.classList.remove('close')
+        hamburger.classList.add('open')
+    } else {
+        hamburger.classList.remove('open')
+        hamburger.classList.add('close')
+    }
+})

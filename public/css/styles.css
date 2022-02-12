@@ -510,9 +510,29 @@ body{
   background-color: #3d0dec;
   border-radius: 25px;
   justify-content: center;
-  top: 35%;
-  left: 0%;
-  height: 200px;
+  top: 45%;
+  left: 15%;
+  height: 600px;
+  width: 380px;
   position: fixed;
   transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.open{
+  animation: open 1s;
+}
+
+.close{
+  animation: close 1s;
+}
+
+@keyframes open {
+  from {width: 0px;}
+  to {width: 380px;}
+}
+
+@keyframes close {
+  from {width: 380px;}
+  to {width: 0px;}
 }

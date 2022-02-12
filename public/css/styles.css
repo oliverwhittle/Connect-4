@@ -512,7 +512,7 @@ body{
   display: flex;
 }
 
-.settingsContainer{
+.settingsMenu{
   height: 600px;
   width: 380px;
 }

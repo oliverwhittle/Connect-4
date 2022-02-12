@@ -508,7 +508,7 @@ body{
   top: 45%;
   left: 6%;
   height: 600px;
-  width: 380px;
+  width: 760px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
@@ -516,7 +516,7 @@ body{
 
 .open{
   animation: open 1s;
-  width: 380px;
+  width: 760px;
 }
 
 .close{
@@ -529,13 +529,13 @@ body{
     width: 0px;
   }
   100% {
-    width: 380px;
+    width: 760px;
   }
 }
 
 @keyframes close {
   0% {
-    width: 380px;
+    width: 760px;
   }
   100% {
     width: 0px;

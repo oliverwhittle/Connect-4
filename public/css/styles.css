@@ -506,7 +506,7 @@ body{
   background-color: #3d0dec;
   justify-content: center;
   top: 45%;
-  left: 6%;
+  left: 0%;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
@@ -526,19 +526,19 @@ body{
 }
 
 @keyframes open {
-  from {
+  0% {
     width: 0px;
   }
-  to {
+  100% {
     width: 380px;
   }
 }
 
 @keyframes close {
-  from {
+  0% {
     width: 380px;
   }
-  to {
+  100% {
     width: 0px;
   }
 }

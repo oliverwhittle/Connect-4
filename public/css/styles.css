@@ -509,7 +509,7 @@ body{
   background-color: #3d0dec;
   justify-content: center;
   top: 45%;
-  left: 15%;
+  left: 6%;
   height: 600px;
   width: 380px;
   position: fixed;
@@ -526,11 +526,11 @@ body{
 }
 
 @keyframes open {
-  from {width: 0px;}
-  to {width: 380px;}
+  from {left: -6%;}
+  to {left: 6%;}
 }
 
 @keyframes close {
-  from {width: 380px;}
-  to {width: 0px;}
+  from {left: 6%;}
+  to {left: -6%;}
 }

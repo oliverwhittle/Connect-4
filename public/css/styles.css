@@ -100,7 +100,6 @@ body{
     background: linear-gradient(-45deg, #FF134A 50%, #FFD166 50%);
     font-family: Inter, sans-serif;
     display: none;
-    animation-name: grow;
     animation: grow 2s;
     width: 300px;
     height: 60px;

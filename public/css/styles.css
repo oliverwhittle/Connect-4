@@ -508,7 +508,6 @@ body{
 .audiocontrolsContainer{
   background-color: #3d0dec;
   justify-content: center;
-  top: 45%;
   height: 600px;
   width: 380px;
   position: fixed;
@@ -525,11 +524,23 @@ body{
 }
 
 @keyframes open {
-  from {transform: translateX(0px);}
-  to {transform: translateX(190px);}
+  from {
+    top: 45%;
+    left: -6%
+  }
+  to {
+    top: 45%;
+    left: 6%
+  }
 }
 
 @keyframes close {
-  from {transform: translateX(190px);}
-  to {transform: translateX(0px);}
+  from {
+    top: 45%;
+    left: 6%
+  }
+  to {
+    top: 45%;
+    left: -6%
+  }
 }

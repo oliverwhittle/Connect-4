@@ -728,61 +728,60 @@ let songIndex = 0;
 loadSong(songs[songIndex]);
 
 function loadSong(song) {
-  var filePath = song
-  audio.src = "Audio/" + filePath + ".mp3";
+    var filePath = song
+    audio.src = "Audio/" + filePath + ".mp3";
 }
 
 function playSong() {
-  settingsMenu.classList.add('play');
-  playPause.classList.remove('play');
-  playPause.classList.add('pause');
+    settingsMenu.classList.add('play');
+    playPause.classList.remove('play');
+    playPause.classList.add('pause');
 
-  audio.play();
+    audio.play();
 }
 
 function pauseSong() {
-  settingsMenu.classList.remove('play');
-  playPause.classList.remove('pause');
-  playPause.classList.add('play');
+    settingsMenu.classList.remove('play');
+    playPause.classList.remove('pause');
+    playPause.classList.add('play');
 
-  audio.pause();
+    audio.pause();
 }
 
 function prevSong() {
-  songIndex--;
+    songIndex--;
 
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
-  }
+    if (songIndex < 0) {
+      songIndex = songs.length - 1;
+    }
 
-  loadSong(songs[songIndex]);
+    loadSong(songs[songIndex]);
 
-  playSong();
+    playSong();
 }
 
 function nextSong() {
-  songIndex++;
+    songIndex++;
 
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
-  }
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
 
-  loadSong(songs[songIndex]);
+    loadSong(songs[songIndex]);
 
-  playSong();
+    playSong();
 }
 
 playPause.addEventListener('click', () => {
     const isPlaying = settingsMenu.classList.contains('play');
+        if (isPlaying) {
+            pauseSong();
+        } else {
+            playSong();
+        }
+    });
   
-    if (isPlaying) {
-      pauseSong();
-    } else {
-      playSong();
-    }
-  });
+    skipBack.addEventListener('click', prevSong);
+    skipForward.addEventListener('click', nextSong);
   
-  skipBack.addEventListener('click', prevSong);
-  skipForward.addEventListener('click', nextSong);
-  
-  audio.addEventListener('ended', nextSong);
+    audio.addEventListener('ended', nextSong);

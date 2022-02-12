@@ -516,10 +516,12 @@ body{
 
 .open{
   animation: open 1s;
+  width: 380px;
 }
 
 .close{
   animation: close 1s;
+  width: 0px;
 }
 
 @keyframes open {

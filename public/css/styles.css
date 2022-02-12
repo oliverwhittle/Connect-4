@@ -504,7 +504,7 @@ body{
 
 .audiocontrolsContainer{
   background-color: #3d0dec;
-  justify-content: center;
+  justify-content: right;
   top: 45%;
   left: 0%;
   height: 600px;

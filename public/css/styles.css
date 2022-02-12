@@ -509,12 +509,15 @@ body{
   background-color: #3d0dec;
   justify-content: center;
   top: 45%;
-  left: -6%;
-  height: 600px;
-  width: 380px;
+  left: 6%;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
+}
+
+.settingsContainer{
+  height: 600px;
+  width: 380px;
 }
 
 .open{
@@ -527,22 +530,18 @@ body{
 
 @keyframes open {
   from {
-    top: 45%;
-    left: -6%
+    width: 0px;
   }
   to {
-    top: 45%;
-    left: 6%
+    width: 380px;
   }
 }
 
 @keyframes close {
   from {
-    top: 45%;
-    left: 6%
+    width: 380px;
   }
   to {
-    top: 45%;
-    left: -6%
+    width: 0px;
   }
 }

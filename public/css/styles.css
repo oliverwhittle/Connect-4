@@ -506,14 +506,12 @@ body{
   background-color: #3d0dec;
   justify-content: center;
   top: 45%;
-  left: 0%;
+  left: 6%;
+  height: 600px;
+  width: 380px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
-}
-
-.settingsMenu{
-  height: 600px;
 }
 
 .open{

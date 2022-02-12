@@ -525,11 +525,11 @@ body{
 }
 
 @keyframes open {
-  from {left: -6%;}
-  to {left: 6%;}
+  from {transform: translateX(0px);}
+  to {transform: translateX(190px);}
 }
 
 @keyframes close {
-  from {left: 6%;}
-  to {left: -6%;}
+  from {transform: translateX(190px);}
+  to {transform: translateX(0px);}
 }

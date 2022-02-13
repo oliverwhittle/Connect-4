@@ -499,6 +499,8 @@ body{
   cursor: pointer;
   padding: 10px;
   margin: 0 20px;
+  top: 60%;
+  position: relative;
 }
 
 .audiocontrolsContainer{
@@ -514,9 +516,9 @@ body{
 }
 
 .settingsMenu{
-  margin: 56px;
-  height: 50px;
-  top: 50%;
+  margin-left: 56px;
+  margin-right: 56px;
+  height: 600px;
   position: fixed;
 }
 
@@ -554,8 +556,8 @@ body{
 
 .songtitleContainer{
   background-color: #F0F8FF;
-  height: 100px;
-  width: 200px;
+  height: 140px;
+  width: 240px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;

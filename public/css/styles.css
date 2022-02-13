@@ -499,6 +499,7 @@ body{
   margin: 0 20px;
   top: 60%;
   position: relative;
+  display: none;
 }
 
 .audiocontrolsContainer{
@@ -518,6 +519,7 @@ body{
   margin-right: 56px;
   height: 600px;
   position: fixed;
+  display: none;
 }
 
 .open{

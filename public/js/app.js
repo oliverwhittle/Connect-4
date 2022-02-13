@@ -25,6 +25,7 @@ const settingsMenu = document.querySelector('.settingsMenu');
 const audio = document.querySelector('.audio');
 const hamburgerCB = document.querySelector('.hamburgerCheckbox');
 const audiocontrolsContainer = document.querySelector('.audiocontrolsContainer');
+const songTitle = document.querySelector('.songTitle')
 
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
@@ -731,6 +732,7 @@ loadSong(songs[songIndex]);
 
 function loadSong(song) {
     var filePath = song
+    songTitle.textContent = filePath;
     audio.src = "Audio/" + filePath + ".mp3";
 }
 

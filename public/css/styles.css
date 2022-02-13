@@ -493,9 +493,8 @@ body{
 /*------------------------------------------------------------------------------*/
 
 .btn-sForward, .btn-sBack, .btn-playPause {
-  background-color: #fff;
+  background-color: transparent;
   border: 0px;
-  color: #dfdbdf;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;

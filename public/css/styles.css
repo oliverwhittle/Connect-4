@@ -552,11 +552,21 @@ body{
   background: transparent;
 }
 
-.songTitle{
+.songtitleContainer{
   background-color: #F0F8FF;
   height: 100px;
-  width: 100px;
+  width: 200px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
+  top: 40%;
+  left: 75%;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.songTitle{
+  text-align: center;
+  font-size: 30px;
 }

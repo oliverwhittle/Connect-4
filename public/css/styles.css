@@ -497,7 +497,7 @@ body{
   cursor: pointer;
   padding: 10px;
   margin: 0 20px;
-  top: 60%;
+  top: 40%;
   position: relative;
 }
 
@@ -557,11 +557,11 @@ body{
   background-color: #F0F8FF;
   height: 140px;
   width: 240px;
-  position: fixed;
+  position: relative;
   transform: translate(-50%, -50%);
   display: flex;
   top: 40%;
-  left: 75%;
+  left: 50%;
   border-radius: 25px;
   align-items: center;
 }

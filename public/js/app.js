@@ -25,7 +25,8 @@ const settingsMenu = document.querySelector('.settingsMenu');
 const audio = document.querySelector('.audio');
 const hamburgerCB = document.querySelector('.hamburgerCheckbox');
 const audiocontrolsContainer = document.querySelector('.audiocontrolsContainer');
-const songTitle = document.querySelector('.songTitle')
+const songTitle = document.querySelector('.songTitle');
+const playorpauseIcon = document.querySelector('.playPause');
 
 //<-----------MISC---------->//
 const roomCode = document.querySelector('.roomCode')
@@ -743,6 +744,7 @@ function loadSong(song) {
 }
 
 function playSong() {
+    playorpauseIcon.src = "icons/pause.png"
     settingsMenu.classList.add('play');
     playPause.classList.remove('play');
     playPause.classList.add('pause');
@@ -751,6 +753,7 @@ function playSong() {
 }
 
 function pauseSong() {
+    playorpauseIcon.src = "icons/play.png"
     settingsMenu.classList.remove('play');
     playPause.classList.remove('pause');
     playPause.classList.add('play');

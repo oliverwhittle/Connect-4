@@ -798,9 +798,11 @@ playPause.addEventListener('click', () => {
 
 hamburgerCB.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
+        settingsMenu.style.display = "block"
         audiocontrolsContainer.classList.remove('close')
         audiocontrolsContainer.classList.add('open')
     } else {
+        settingsMenu.style.display = "none"
         audiocontrolsContainer.classList.remove('open')
         audiocontrolsContainer.classList.add('close')
     }

@@ -298,7 +298,6 @@ body{
 .roomCodeContainer{
     justify-content: center;
     align-items: center;
-    position: relative;
     position: fixed;
     top: 90%;
     left: 50%;
@@ -335,7 +334,6 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     display: grid;
     grid-template-columns: repeat(7, 100px);
     grid-template-rows: repeat(6, 100px);
@@ -564,7 +562,6 @@ body{
   top: 40%;
   left: 75%;
   border-radius: 25px;
-  justify-content: center;
   align-items: center;
 }
 

@@ -151,6 +151,8 @@ function menu(){
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
+    roomcodeLable.style.display = "none";
+    roomcodelableContainer.style.display = "none";
 }
 
 socket.on('menu', (data) =>{
@@ -162,6 +164,8 @@ socket.on('menu', (data) =>{
     restartButton.style.display = "none";
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
+    roomcodeLable.style.display = "none";
+    roomcodelableContainer.style.display = "none";
 });
 
 confirmButton.addEventListener('click', () => {
@@ -186,6 +190,8 @@ socket.on('startGame', (data, clientsinRoom) => {
     restartButton.style.display = "block";
     gameSettings.style.display = "none";
     winningPlayer.style.display = "none";
+    roomcodeLable.style.display = "block";
+    roomcodelableContainer.style.display = "block";
     console.log("Clients in room", clientsinRoom)
     if (clientsinRoom == 2){
         socket.emit('associateTurn', socket.io.engine.id) 

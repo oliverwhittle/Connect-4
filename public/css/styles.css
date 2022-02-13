@@ -514,9 +514,8 @@ body{
 }
 
 .settingsMenu{
-  margin-left: 56px;
-  margin-right: 56px;
-  margin-top: 56px;
+  margin: 56px;
+  height: 50px;
 }
 
 .open{

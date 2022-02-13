@@ -507,7 +507,7 @@ body{
   top: 45%;
   left: 0%;
   height: 600px;
-  width: 760px;
+  width: 0px;
   position: fixed;
   transform: translate(-50%, -50%);
   display: flex;

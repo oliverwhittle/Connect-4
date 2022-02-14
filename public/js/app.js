@@ -117,6 +117,9 @@ menuButton.addEventListener('click', () => {
         viewingStats = false;
         menu();
     }else if (playingAiGame == true){
+        row.forEach(cell => {
+            cell.removeEventListener('click', rPlaced, {once: false})
+        })
         AIgamestate = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "];
         gameOver = false;
         menu();

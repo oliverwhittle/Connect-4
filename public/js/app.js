@@ -125,7 +125,7 @@ menuButton.addEventListener('click', () => {
         menu();
     }else if (playingGame == true){
         row.forEach(cell => {
-            cell.addEventListener('click', handleClick, {once: false})
+            cell.removeEventListener('click', handleClick, {once: false})
             })
         socket.emit('quitGame', socket.io.engine.id);
     }else{

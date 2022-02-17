@@ -578,17 +578,9 @@ body{
   z-index: 1;
 }
 
-/*.musicPlayer .line1 {
-  transform-origin: 0% 0%;
+.musicPlayer .line1, .line2, .line3 {
+  transform-origin: 50% 50%;
 }
-
-.musicPlayer .line2 {
-  transform-origin: 0% 100%;
-}
-
-.musicPlayer .line3 {
-  transform-origin: 0% 200%;
-}*/
 
 .musicPlayer{
   width:60px;

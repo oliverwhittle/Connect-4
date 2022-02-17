@@ -549,8 +549,10 @@ body{
 }
 
 .hamburgerCheckbox {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  opacity: 0;
 }
 .musicPlayer span {
   display: block;
@@ -563,6 +565,7 @@ body{
   top: 10%;
   left: 2%;
   border-radius: 25px;
+  z-index: 1;
 }
 
 .musicPlayer span {

@@ -553,10 +553,7 @@ body{
   height: 60px;
   z-index: 2;
   opacity: 0;
-  transform: translate(-50%, -50%);
-  top: 5%;
-  left: 2%;
-  position: relative;
+  position: inherit;
 }
 .musicPlayer span {
   display: block;
@@ -564,12 +561,9 @@ body{
   height: 10px;
   margin-bottom: 10px;
   background-color: aliceblue;
-  transform: translate(-50%, -50%);
-  top: 5%;
-  left: 2%;
   border-radius: 25px;
   z-index: 1;
-  position: relative;
+  position: inherit;
 }
 
 .musicPlayer span:first-child {

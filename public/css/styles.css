@@ -520,6 +520,14 @@ body{
   display: none;
 }
 
+.settingsMenu .play{
+  animation: spin 2s infinite linear;
+}
+
+.settingsMenu .pause{
+  animation-play-state: paused;
+}
+
 .open{
   animation: open 1s;
   width: 760px;
@@ -604,7 +612,13 @@ body{
   left: 50%;
   border-radius: 360px;
   align-items: center;
+  transform-origin: 75% 50%;
 }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);}
+  }
 
 .songTitle{
   text-align: center;

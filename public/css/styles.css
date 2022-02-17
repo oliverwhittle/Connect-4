@@ -561,11 +561,11 @@ body{
 }
 
 .hamburgerCheckbox:checked ~ span:first-child{
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg);
 }
 
 .hamburgerCheckbox:checked ~ span:last-child{
-  transform: rotate(-45deg) translate(0px, -1px);
+  transform: rotate(-45deg);
 }
 
 .musicPlayer span {

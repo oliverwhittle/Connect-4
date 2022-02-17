@@ -595,18 +595,18 @@ body{
 
 .songtitleContainer{
   background-color: #F0F8FF;
-  height: 140px;
+  height: 240px;
   width: 240px;
-  position: fixed;
+  position: relative;
   transform: translate(-50%, -50%);
   display: flex;
   top: 40%;
   left: 50%;
-  border-radius: 25px;
+  border-radius: 360px;
   align-items: center;
 }
 
 .songTitle{
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
 }

@@ -26,6 +26,7 @@ const audio = document.querySelector('.audio');
 const hamburgerCB = document.querySelector('.hamburgerCheckbox');
 const audiocontrolsContainer = document.querySelector('.audiocontrolsContainer');
 const songTitle = document.querySelector('.songTitle');
+const songtitleContainer = document.querySelector('.songtitleContainer');
 const playorpauseIcon = document.querySelector('.playPause');
 
 //<-----------MISC---------->//
@@ -754,7 +755,9 @@ function playSong() {
     settingsMenu.classList.add('play');
     playPause.classList.remove('play');
     playPause.classList.add('pause');
-
+    songtitleContainer.remove('play');
+    songtitleContainer.add('pause');
+    
     audio.play();
 }
 
@@ -763,6 +766,8 @@ function pauseSong() {
     settingsMenu.classList.remove('play');
     playPause.classList.remove('pause');
     playPause.classList.add('play');
+    songtitleContainer.remove('pause');
+    songtitleContainer.add('play');
 
     audio.pause();
 }

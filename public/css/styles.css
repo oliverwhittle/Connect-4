@@ -617,8 +617,8 @@ body{
 }
 
 @keyframes spin {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
+  from {transform: translate(-120px, -120px) rotate(0deg);}
+  to {transform: translate(-120px, -120px) rotate(360deg);}
 }
 
 .songTitle{

@@ -548,10 +548,24 @@ body{
   }
 }
 
-.hamburgerCheckbox{
-  background-image: url("icons/music_icon.png");
+.hamburgerCheckbox {
   width: 30px;
   height: 30px;
+}
+.musicPlayer span {
+  display: block;
+  width:30px;
+  height: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.musicPlayer span {
+  transform-origin: 0% 0%;
+}
+
+.musicPlayer span {
+  transform-origin: 0% 100%;
 }
 
 .songtitleContainer{

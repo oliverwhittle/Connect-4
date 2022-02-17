@@ -608,11 +608,11 @@ body{
   transform-origin: 50% 50%;
 }
 
-.songtitleContainer.play{
+.songtitleContainer.pause{
   animation: spin 2s infinite linear;
 }
 
-.songtitleContainer.pause{
+.songtitleContainer.play{
   animation-play-state: paused;
 }
 

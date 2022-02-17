@@ -554,22 +554,22 @@ body{
   z-index: 2;
   opacity: 0;
   transform: translate(-50%, -50%);
-  top: 10%;
+  top: 5%;
   left: 2%;
+  position: relative;
 }
 .musicPlayer span {
   display: block;
   width: 60px;
   height: 10px;
   margin-bottom: 10px;
-  position: relative;
   background-color: aliceblue;
   transform: translate(-50%, -50%);
-  top: 10%;
+  top: 5%;
   left: 2%;
   border-radius: 25px;
   z-index: 1;
-  position: fixed;
+  position: relative;
 }
 
 .musicPlayer span:first-child {
@@ -578,6 +578,14 @@ body{
 
 .musicPlayer span:last-child {
   transform-origin: 0% 100%;
+}
+
+.musicPlayer{
+  width:60px;
+  height: 60px;
+  top:0%;
+  left:0%;
+  justify-content: center;
 }
 
 .songtitleContainer{

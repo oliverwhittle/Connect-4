@@ -554,10 +554,15 @@ body{
 }
 .musicPlayer span {
   display: block;
-  width:30px;
-  height: 5px;
-  margin-bottom: 5px;
+  width: 60px;
+  height: 10px;
+  margin-bottom: 10px;
   position: relative;
+  background-color: aliceblue;
+  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 2%;
+  border-radius: 25px;
 }
 
 .musicPlayer span {

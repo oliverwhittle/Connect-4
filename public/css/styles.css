@@ -557,7 +557,7 @@ body{
 }
 
 .hamburgerCheckbox:checked ~ .line1{
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg);
 }
 
 .hamburgerCheckbox:checked ~ .line2{
@@ -565,7 +565,7 @@ body{
 }
 
 .hamburgerCheckbox:checked ~ .line3{
-  transform: rotate(-45deg) translate(0, -1px);
+  transform: rotate(-45deg);
 }
 
 .musicPlayer span {

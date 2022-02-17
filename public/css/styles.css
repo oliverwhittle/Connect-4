@@ -520,13 +520,13 @@ body{
   display: none;
 }
 
-.settingsMenu .play, .songtitleContainer{
+/*.settingsMenu .play, .songtitleContainer{
   animation: spin 2s infinite linear;
 }
 
 .settingsMenu .pause, .songtitleContainer{
   animation-play-state: paused;
-}
+}*/
 
 .open{
   animation: open 1s;
@@ -612,7 +612,7 @@ body{
   left: 50%;
   border-radius: 360px;
   align-items: center;
-  transform-origin: 75% 50%;
+  transform-origin: 50% 50%;
 }
 
 @keyframes spin {

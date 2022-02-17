@@ -556,15 +556,18 @@ body{
   position: inherit;
 }
 
-.hamburgerCheckbox:checked ~ span{
-  transform: rotate(0deg);
-}
-
-.hamburgerCheckbox:checked ~ span:first-child{
+.hamburgerCheckbox:checked,
+.line1{
   transform: rotate(45deg);
 }
 
-.hamburgerCheckbox:checked ~ span:last-child{
+.hamburgerCheckbox:checked,
+.line2{
+  transform: rotate(0deg);
+}
+
+.hamburgerCheckbox:checked,
+.line3{
   transform: rotate(-45deg);
 }
 
@@ -578,12 +581,16 @@ body{
   z-index: 1;
 }
 
-.musicPlayer span:first-child {
+.musicPlayer .line1 {
   transform-origin: 0% 0%;
 }
 
-.musicPlayer span:last-child {
+.musicPlayer .line2 {
   transform-origin: 0% 100%;
+}
+
+.musicPlayer .line3 {
+  transform-origin: 0% 200%;
 }
 
 .musicPlayer{

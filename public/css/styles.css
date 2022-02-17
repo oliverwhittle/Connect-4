@@ -549,7 +549,9 @@ body{
 }
 
 .hamburgerCheckbox{
-  background: transparent;
+  display: none;
+  width: 20px;
+  height: 5px;
 }
 
 .songtitleContainer{

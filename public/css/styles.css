@@ -556,18 +556,15 @@ body{
   position: inherit;
 }
 
-.hamburgerCheckbox:checked,
-.line1{
+.hamburgerCheckbox:checked ~ .line1{
   transform: rotate(45deg);
 }
 
-.hamburgerCheckbox:checked,
-.line2{
+.hamburgerCheckbox:checked ~ .line2{
   transform: rotate(0deg);
 }
 
-.hamburgerCheckbox:checked,
-.line3{
+.hamburgerCheckbox:checked ~ .line3{
   transform: rotate(-45deg);
 }
 

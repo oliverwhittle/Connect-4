@@ -563,7 +563,6 @@ body{
   background-color: aliceblue;
   border-radius: 25px;
   z-index: 1;
-  position: inherit;
 }
 
 .musicPlayer span:first-child {
@@ -577,9 +576,10 @@ body{
 .musicPlayer{
   width:60px;
   height: 60px;
-  top:0%;
-  left:0%;
+  top: 2%;
+  left: 2%;
   justify-content: center;
+  position: fixed;
 }
 
 .songtitleContainer{

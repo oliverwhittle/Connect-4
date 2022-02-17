@@ -553,6 +553,9 @@ body{
   height: 60px;
   z-index: 2;
   opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 2%;
 }
 .musicPlayer span {
   display: block;
@@ -566,13 +569,14 @@ body{
   left: 2%;
   border-radius: 25px;
   z-index: 1;
+  position: fixed;
 }
 
-.musicPlayer span {
+.musicPlayer span:first-child {
   transform-origin: 0% 0%;
 }
 
-.musicPlayer span {
+.musicPlayer span:last-child {
   transform-origin: 0% 100%;
 }
 
@@ -580,7 +584,7 @@ body{
   background-color: #F0F8FF;
   height: 140px;
   width: 240px;
-  position: relative;
+  position: fixed;
   transform: translate(-50%, -50%);
   display: flex;
   top: 40%;

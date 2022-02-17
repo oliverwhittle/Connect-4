@@ -510,6 +510,7 @@ body{
   transform: translate(-50%, -50%);
   display: flex;
   border-radius: 25px;
+  outline: 14px solid #2a0f8b;
 }
 
 .settingsMenu{
@@ -522,7 +523,7 @@ body{
 
 .open{
   animation: open 1s;
-  width: 760px;
+  width: 732px;
 }
 
 .close{
@@ -535,13 +536,13 @@ body{
     width: 0px;
   }
   100% {
-    width: 760px;
+    width: 732px;
   }
 }
 
 @keyframes close {
   0% {
-    width: 760px;
+    width: 732px;
   }
   100% {
     width: 0px;

@@ -520,11 +520,11 @@ body{
   display: none;
 }
 
-.settingsMenu .play{
+.settingsMenu .play, .songtitleContainer{
   animation: spin 2s infinite linear;
 }
 
-.settingsMenu .pause{
+.settingsMenu .pause, .songtitleContainer{
   animation-play-state: paused;
 }
 

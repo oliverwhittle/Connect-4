@@ -755,8 +755,8 @@ function playSong() {
     settingsMenu.classList.add('play');
     playPause.classList.remove('play');
     playPause.classList.add('pause');
-    songtitleContainer.remove('play');
-    songtitleContainer.add('pause');
+    songtitleContainer.classList.remove('play');
+    songtitleContainer.classList.add('pause');
     
     audio.play();
 }
@@ -766,8 +766,8 @@ function pauseSong() {
     settingsMenu.classList.remove('play');
     playPause.classList.remove('pause');
     playPause.classList.add('play');
-    songtitleContainer.remove('pause');
-    songtitleContainer.add('play');
+    songtitleContainer.classList.remove('pause');
+    songtitleContainer.classList.add('play');
 
     audio.pause();
 }
